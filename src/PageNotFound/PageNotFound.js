@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export default class ForumView extends Component {
+export default class PageNotFound extends Component {
   render() {
     return (
       <div>
-        Forum View
+        Page Not Found
       </div>
     )
   }
