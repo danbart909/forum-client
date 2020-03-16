@@ -1,0 +1,21 @@
+header {
+  padding: 45px 0 35px 0;
+}
+
+section {
+  padding: 0px 0;
+  width: 80%;
+}
+
+div {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #BDBDBD;
+}
+
+button {
+  margin: 0 15px;
+  padding: 2px;
+}

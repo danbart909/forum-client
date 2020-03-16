@@ -37,19 +37,19 @@ export default class App extends Component {
               component={ForumView}
             />
             <Route
-              exact path={'/forum/:threadId'}
-              component={ThreadView}
-            />
-            <Route
               exact path={'/forum/post'}
               component={PostThread}
             />
             <Route
-              exact path={'/forum/reply'}
-              component={PostReply}
+              component={PageNotFound}
             />
             <Route
-              component={PageNotFound}
+              exact path={'/forum/:threadId'}
+              component={ThreadView}
+            />
+            <Route
+              exact path={'/forum/:threadId/reply'}
+              component={PostReply}
             />
           </Switch>
         </main>
