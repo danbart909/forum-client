@@ -10,8 +10,14 @@ import ThreadView from '../ThreadView/ThreadView'
 import PostThread from '../PostThread/PostThread'
 import PostReply from '../PostReply/PostReply'
 import PageNotFound from '../PageNotFound/PageNotFound'
+import tempStore from '../tempStore'
 
 export default class App extends Component {
+
+  state = {
+    tempStore
+  }
+
   render() {
     return (
       <>
@@ -34,25 +40,28 @@ export default class App extends Component {
             />
             <Route
               exact path={'/forum'}
-              component={ForumView}
+              render={(props) => <ForumView {...props} state={this.state} />}
             />
             <Route
               exact path={'/forum/post'}
-              component={PostThread}
+              render={(props) => <PostThread {...props} state={this.state} />}
+            />
+            <Route
+              path={'/forum/:id/reply'}
+              render={(props) => <PostReply {...props} state={this.state} />}
+            />
+            <Route
+              path={'/forum/:id'}
+              render={(props) => <ThreadView {...props} state={this.state} />}
             />
             <Route
               component={PageNotFound}
             />
-            <Route
-              exact path={'/forum/:threadId'}
-              component={ThreadView}
-            />
-            <Route
-              exact path={'/forum/:threadId/reply'}
-              component={PostReply}
-            />
           </Switch>
         </main>
+        <div>
+          <button onClick={() => {console.log(this.state)}}>this.state(App)</button>
+        </div>
       </>
     )
   }

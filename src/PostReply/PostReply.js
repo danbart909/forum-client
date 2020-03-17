@@ -2,7 +2,20 @@ import React, { Component } from 'react'
 // import './PostReply.css'
 
 export default class PostReply extends Component {
+
+  threadName = () => {
+    const threadId = this.props.match.params.id
+    const threads = this.props.state.tempStore.threads
+    const thread = threads.find(x =>
+      x.id === threadId
+    )
+    return (
+      thread.name
+    )
+  }
+
   render() {
+    console.log(this.props)
     return (
       <>
         <header role="banner">
@@ -14,7 +27,7 @@ export default class PostReply extends Component {
           <div>
             <form>
               <div>
-                *name of thread*
+                {this.threadName()}
               </div>
               <div>
                 {/* <label htmlFor="thread-body">Reply:</label> */}
