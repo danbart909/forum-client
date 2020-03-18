@@ -7,25 +7,26 @@ export default class ThreadView extends Component {
 
   renderOP = () => {
     const threadId = this.props.match.params.id
-    const threads = this.props.state.tempStore.threads
+    const threads = this.props.state.threads
+    console.log(threads)
     const thread = threads.find(x =>
-      x.id === threadId
+      x.id == threadId
     )
     return (
       <section className='thread'>
         {thread.id}<br/>
         {thread.name}<br/>
         {thread.author}<br/>
-        {thread.OP}
+        {thread.op}
       </section>
     )
   }
 
   renderReplies = () => {
     const threadId = this.props.match.params.id
-    const replies = this.props.state.tempStore.replies
+    const replies = this.props.state.replies
     const theseReplies = replies.filter(x =>
-      x.threadId === threadId
+      x.threadid == threadId
     )
     return (
       <section className='replies'>
@@ -34,7 +35,7 @@ export default class ThreadView extends Component {
             <li key={reply.id}>
               <ReplyCard
                 id={reply.id}
-                threadId={reply.threadId}
+                threadId={reply.threadid}
                 author={reply.author}
                 content={reply.content}
               />

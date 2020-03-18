@@ -10,13 +10,65 @@ import ThreadView from '../ThreadView/ThreadView'
 import PostThread from '../PostThread/PostThread'
 import PostReply from '../PostReply/PostReply'
 import PageNotFound from '../PageNotFound/PageNotFound'
-import tempStore from '../tempStore'
+import ForumService from '../services/forum-service'
+import config from '../config'
 
 export default class App extends Component {
 
-  state = {
-    tempStore
+    state = {
+      threads: [],
+      replies: []
+    }
+
+  setInitialStateThreads = (threads) => {
+    this.setState({ threads })
+    console.log(this.state.threads)
   }
+
+  setInitialStateReplies = (replies) => {
+    this.setState({ replies })
+    console.log(this.state.replies)
+  }
+
+  componentDidMount() {
+    this.getThreads()
+    this.getReplies()
+    console.log(this.state)
+  }
+
+  getThreads() {
+    return fetch(`${config.API_ENDPOINT}/threads`, {
+      headers: {
+        'authorization': `bearer ${config.TOKEN_KEY}`,
+      },
+    })
+    .then(res =>
+      (!res.ok)
+        ? res.json().then(e => Promise.reject(e))
+        : res.json()
+    )
+    .then(res =>
+      this.setInitialStateThreads(res)
+    )
+  }
+
+  getReplies() {
+    return fetch(`${config.API_ENDPOINT}/replies`, {
+      headers: {
+        'authorization': `bearer ${config.TOKEN_KEY}`,
+      },
+    })
+    .then(res =>
+      (!res.ok)
+        ? res.json().then(e => Promise.reject(e))
+        : res.json()
+    )
+    .then(res =>
+      this.setInitialStateReplies(res)
+    )
+  }
+
+
 
   render() {
     return (
