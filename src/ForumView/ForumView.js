@@ -6,7 +6,6 @@ import ThreadCard from '../ThreadCard/ThreadCard'
 export default class ForumView extends Component {
 
   renderThreads = () => {
-    console.log(this.props)
     const threads = this.props.state.threads
     return threads.map(threads =>
       <ThreadCard

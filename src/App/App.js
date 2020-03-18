@@ -36,7 +36,7 @@ export default class App extends Component {
     console.log(this.state)
   }
 
-  getThreads() {
+  getThreads = () => {
     return fetch(`${config.API_ENDPOINT}/threads`, {
       headers: {
         'authorization': `bearer ${config.TOKEN_KEY}`,
@@ -52,7 +52,7 @@ export default class App extends Component {
     )
   }
 
-  getReplies() {
+  getReplies = () => {
     return fetch(`${config.API_ENDPOINT}/replies`, {
       headers: {
         'authorization': `bearer ${config.TOKEN_KEY}`,
@@ -92,7 +92,7 @@ export default class App extends Component {
             />
             <Route
               exact path={'/forum'}
-              render={(props) => <ForumView {...props} state={this.state} />}
+              render={(props) => <ForumView {...props} state={this.state} getThreads={() => {this.getThreads()}} getReplies={() => {this.getReplies()}}/>}
             />
             <Route
               exact path={'/forum/post'}
@@ -104,7 +104,7 @@ export default class App extends Component {
             />
             <Route
               path={'/forum/:id'}
-              render={(props) => <ThreadView {...props} state={this.state} />}
+              render={(props) => <ThreadView {...props} state={this.state} getThreads={() => {this.getThreads()}} getReplies={() => {this.getReplies()}}/>}
             />
             <Route
               component={PageNotFound}

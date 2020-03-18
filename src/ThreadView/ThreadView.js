@@ -5,7 +5,15 @@ import ReplyCard from '../ReplyCard/ReplyCard'
 
 export default class ThreadView extends Component {
 
+  componentDidMount() {
+    console.log(this.props)
+    // this.props.getReplies()
+    // this.props.getThreads()
+  }
+
   renderOP = () => {
+    // this.props.getReplies()
+    // this.props.getThreads()
     const threadId = this.props.match.params.id
     const threads = this.props.state.threads
     console.log(threads)

@@ -5,9 +5,9 @@ export default class PostReply extends Component {
 
   threadName = () => {
     const threadId = this.props.match.params.id
-    const threads = this.props.state.tempStore.threads
+    const threads = this.props.state.threads
     const thread = threads.find(x =>
-      x.id === threadId
+      x.id == threadId
     )
     return (
       thread.name
