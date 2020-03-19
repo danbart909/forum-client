@@ -54,8 +54,6 @@ export default class ThreadView extends Component {
     )
   }
 
-
-
   render() {
     const threadId = this.props.match.params.id
     return (
