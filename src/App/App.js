@@ -21,6 +21,7 @@ export default class App extends Component {
     }
 
   setInitialStateThreads = (threads) => {
+    console.log(threads)
     this.setState({ threads })
     console.log(this.state.threads)
   }
@@ -92,19 +93,19 @@ export default class App extends Component {
             />
             <Route
               exact path={'/forum'}
-              render={(props) => <ForumView {...props} state={this.state} getThreads={() => {this.getThreads()}} getReplies={() => {this.getReplies()}}/>}
+              render={(props) => <ForumView {...props} forumState={this.state} />}
             />
             <Route
               exact path={'/forum/post'}
-              render={(props) => <PostThread {...props} state={this.state} />}
+              render={(props) => <PostThread {...props} forumState={this.state} />}
             />
             <Route
               path={'/forum/:id/reply'}
-              render={(props) => <PostReply {...props} state={this.state} />}
+              render={(props) => <PostReply {...props} forumState={this.state} />}
             />
             <Route
               path={'/forum/:id'}
-              render={(props) => <ThreadView {...props} state={this.state} getThreads={() => {this.getThreads()}} getReplies={() => {this.getReplies()}}/>}
+              render={(props) => <ThreadView {...props} forumState={this.state} />}
             />
             <Route
               component={PageNotFound}

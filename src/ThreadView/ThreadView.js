@@ -4,61 +4,72 @@ import { Link } from 'react-router-dom'
 import ReplyCard from '../ReplyCard/ReplyCard'
 
 export default class ThreadView extends Component {
+  // static defaultProps = {
+  //     threads: [ {id: 1}, {id: 2}, {id: 3} ],
+  //     replies: [ {id: 1}, {id: 2}, {id: 3} ]
+  // }
+
 
   componentDidMount() {
     console.log(this.props)
-    // this.props.getReplies()
-    // this.props.getThreads()
   }
 
   renderOP = () => {
-    // this.props.getReplies()
-    // this.props.getThreads()
     const threadId = this.props.match.params.id
-    const threads = this.props.state.threads
+    console.log(this.props)
+    const threads = this.props.forumState.threads
     console.log(threads)
     const thread = threads.find(x =>
       x.id == threadId
     )
-    return (
-      <section className='thread'>
-        {thread.id}<br/>
-        {thread.name}<br/>
-        {thread.author}<br/>
-        {thread.op}
-      </section>
-    )
+    if (thread) {
+      return (
+        <section className='thread'>
+          {thread.id}<br/>
+          {thread.name}<br/>
+          {thread.author}<br/>
+          {thread.op}
+        </section>
+      )
+    }
+    else {
+      return <p>Loading... Please Wait</p>
+    }
   }
 
   renderReplies = () => {
     const threadId = this.props.match.params.id
-    const replies = this.props.state.replies
+    const replies = this.props.forumState.replies
     const theseReplies = replies.filter(x =>
       x.threadid == threadId
     )
-    return (
-      <section className='replies'>
-        <ul>
-          {theseReplies.map(reply =>
-            <li key={reply.id}>
-              <ReplyCard
-                id={reply.id}
-                threadId={reply.threadid}
-                author={reply.author}
-                content={reply.content}
-              />
-            </li>
-          )}
-        </ul>
-      </section>
-    )
+    if (theseReplies) {
+      return (
+        <section className='replies'>
+          <ul>
+            {theseReplies.map(reply =>
+              <li key={reply.id}>
+                <ReplyCard
+                  id={reply.id}
+                  threadId={reply.threadid}
+                  author={reply.author}
+                  content={reply.content}
+                />
+              </li>
+            )}
+          </ul>
+        </section>
+      )
+    }
+    else {
+      return <p>Loading... Please Wait</p>
+    }
   }
 
   render() {
     const threadId = this.props.match.params.id
     return (
       <div>
-        Thread View
         {this.renderOP()}
         {this.renderReplies()}
         <Link to={`/forum/${threadId}/reply`}><button>post reply</button></Link>

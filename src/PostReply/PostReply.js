@@ -5,13 +5,18 @@ export default class PostReply extends Component {
 
   threadName = () => {
     const threadId = this.props.match.params.id
-    const threads = this.props.state.threads
+    const threads = this.props.forumState.threads
     const thread = threads.find(x =>
       x.id == threadId
     )
-    return (
-      thread.name
-    )
+    if (thread) {
+      return (
+        thread.name
+      )
+    }
+    else {
+      return <p>Loading... Please Wait</p>
+    }
   }
 
   render() {
