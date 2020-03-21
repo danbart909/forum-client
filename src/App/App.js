@@ -11,6 +11,8 @@ import PostThread from '../PostThread/PostThread'
 import PostReply from '../PostReply/PostReply'
 import PageNotFound from '../PageNotFound/PageNotFound'
 import ForumService from '../services/forum-service'
+import EditThread from '../EditThread/EditThread'
+import EditReply from '../EditReply/EditReply'
 import config from '../config'
 
 export default class App extends Component {
@@ -21,20 +23,16 @@ export default class App extends Component {
     }
 
   setInitialStateThreads = (threads) => {
-    console.log(threads)
     this.setState({ threads })
-    console.log(this.state.threads)
   }
 
   setInitialStateReplies = (replies) => {
     this.setState({ replies })
-    console.log(this.state.replies)
   }
 
   componentDidMount() {
     this.getThreads()
     this.getReplies()
-    console.log(this.state)
   }
 
   getThreads = () => {
@@ -92,6 +90,14 @@ export default class App extends Component {
               component={RegistrationForm}
             />
             <Route
+              path={'/forum/:threadid/edit'}
+              render={(props) => <EditThread {...props} forumState={this.state} />}
+            />
+            <Route
+              path={'/forum/:threadid/:id/edit'}
+              render={(props) => <EditReply {...props} forumState={this.state} />}
+            />
+            <Route
               exact path={'/forum'}
               render={(props) => <ForumView {...props} forumState={this.state} />}
             />
@@ -100,13 +106,14 @@ export default class App extends Component {
               render={(props) => <PostThread {...props} forumState={this.state} />}
             />
             <Route
-              path={'/forum/:id/reply'}
+              path={'/forum/:threadid/reply'}
               render={(props) => <PostReply {...props} forumState={this.state} />}
             />
             <Route
-              path={'/forum/:id'}
+              path={'/forum/:threadid'}
               render={(props) => <ThreadView {...props} forumState={this.state} />}
             />
+            
             <Route
               component={PageNotFound}
             />

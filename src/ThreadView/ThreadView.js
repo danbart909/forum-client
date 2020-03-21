@@ -2,26 +2,27 @@ import React, { Component } from 'react'
 // import './ThreadView.css'
 import { Link } from 'react-router-dom'
 import ReplyCard from '../ReplyCard/ReplyCard'
+import ForumService from '../services/forum-service'
 
 export default class ThreadView extends Component {
-  // static defaultProps = {
-  //     threads: [ {id: 1}, {id: 2}, {id: 3} ],
-  //     replies: [ {id: 1}, {id: 2}, {id: 3} ]
+
+  // componentDidMount() {
+  //   console.log(this.props)
   // }
 
-
-  componentDidMount() {
-    console.log(this.props)
+  deleteThread = () => {
+    let id = this.props.match.params.threadid
+    ForumService.deleteThread(id)
+    this.props.history.push(`/forum`)
   }
 
   renderOP = () => {
-    const threadId = this.props.match.params.id
-    console.log(this.props)
+    const threadId = this.props.match.params.threadid
     const threads = this.props.forumState.threads
-    console.log(threads)
     const thread = threads.find(x =>
       x.id == threadId
     )
+    console.log(threadId, threads, thread)
     if (thread) {
       return (
         <section className='thread'>
@@ -29,6 +30,8 @@ export default class ThreadView extends Component {
           {thread.name}<br/>
           {thread.author}<br/>
           {thread.op}
+          <Link to={`/forum/${thread.id}/edit`}><button>edit</button></Link>
+          <button onClick={() => {this.deleteThread()}}>delete</button>
         </section>
       )
     }
@@ -38,7 +41,7 @@ export default class ThreadView extends Component {
   }
 
   renderReplies = () => {
-    const threadId = this.props.match.params.id
+    const threadId = this.props.match.params.threadid
     const replies = this.props.forumState.replies
     const theseReplies = replies.filter(x =>
       x.threadid == threadId
@@ -67,7 +70,7 @@ export default class ThreadView extends Component {
   }
 
   render() {
-    const threadId = this.props.match.params.id
+    const threadId = this.props.match.params.threadid
     return (
       <div>
         {this.renderOP()}

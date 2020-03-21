@@ -1,7 +1,14 @@
 import React, { Component } from 'react'
 // import './PostReply.css'
-
+import ForumService from '../services/forum-service'
 export default class PostReply extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      error: null,
+      content: ''
+    }
+  }
 
   threadName = () => {
     const threadId = this.props.match.params.id
@@ -19,8 +26,24 @@ export default class PostReply extends Component {
     }
   }
 
+  handleSubmit = e => {
+    e.preventDefault()
+    const content = this.state.content
+    const threadId = this.props.match.params.id
+    ForumService.postReply(threadId, content)
+    this.props.history.push(`/forum/${threadId}`)
+  }
+
+  handleGoBack = () => {
+    const threadId = this.props.match.params.id
+    this.props.history.push(`/forum/${threadId}`)
+  }
+
+  handleChangeContent = e => {
+    this.setState({ content: e.target.value })
+  }
+
   render() {
-    console.log(this.props)
     return (
       <>
         <header role="banner">
@@ -30,17 +53,17 @@ export default class PostReply extends Component {
           <div id="one">[Post New Reply]</div>
           <hr/>
           <div>
-            <form>
+            <form className='post-reply-form' onSubmit={(e) => {this.handleSubmit(e)}}>
               <div>
                 {this.threadName()}
               </div>
               <div>
                 {/* <label htmlFor="thread-body">Reply:</label> */}
-                <textarea rows="10" name="reply-body" required></textarea>
+                <textarea rows="10" name="reply-body" onChange={this.handleChangeContent} required></textarea>
               </div>
               <div>
-                <button>Post Reply</button>
-                <button>Go Back</button>
+                <button type='submit'>Post Reply</button>
+                <button onClick={() => {this.handleGoBack()}}>Go Back</button>
               </div>
             </form>
           </div>

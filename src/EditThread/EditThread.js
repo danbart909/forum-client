@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-// import './PostThread.css'
+// import './EditThread.css'
 import ForumService from '../services/forum-service'
-export default class PostThread extends Component {
+
+export default class EditThread extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -13,10 +14,12 @@ export default class PostThread extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
+    let id = this.props.match.params.threadid
     let name = this.state.name
     let op = this.state.op
-    ForumService.postThread(name, op)
-    this.props.history.push('/forum')
+    ForumService.editThread(id, name, op)
+    this.props.history.push(`/threads/${id}`)
+    console.log(id, name, op)
   }
 
   handleGoBack = () => {
@@ -35,13 +38,13 @@ export default class PostThread extends Component {
     return (
       <>
         <header role="banner">
-          <h1>Thinkful Forum New Thread Form</h1>
+          <h1>Thinkful Forum Edit Thread Form</h1>
         </header>
         <section>
-          <div id="one">[Post New Thread]</div>
+          <div id="one">[Edit Thread]</div>
           <hr/>
           <div>
-            <form className='post-thread-form' onSubmit={(e) => {this.handleSubmit(e)}}>
+            <form className='edit-thread-form' onSubmit={(e) => {this.handleSubmit(e)}}>
               <div>
                 <label htmlFor="thread-name">Thread Name:</label>
                 <input type="text" name="thread-name" onChange={this.handleChangeName} required/>
