@@ -23,35 +23,36 @@ export default class EditReply extends Component {
       )
     }
     else {
-      return <p>Loading... Please Wait</p>
+      return <p>Loading...</p>
     }
   }
 
-  replyContent = () => {
+  componentDidMount = () => {
     const id = this.props.match.params.id
     const { replies } = this.props.forumState
     const reply = replies.find(x =>
       x.id == id  
     )
     if (reply) {
-      return (
-        reply.content
-      )
-      .then( this.setState({ content: reply.content }) )
+      this.setState({
+        content: reply.content
+      })
     }
     else {
-      return <p>Loading... Please Wait</p>
+      return <p>Loading...</p>
     }
   }
 
   handleSubmit = e => {
     e.preventDefault()
-    console.log(this.props)
     let id = this.props.match.params.id
+    let threadid = this.props.match.params.threadid
     let content = this.state.content
     ForumService.editReply(id, content)
-    this.props.history.push(`/forum`)
-    console.log(id, content)
+    let thread = this.props.forumState.threads.find(x => 
+      x.id == threadid
+    )
+    this.props.history.push(`/forum/${thread.id}`)
   }
 
   handleGoBack = () => {
@@ -60,7 +61,6 @@ export default class EditReply extends Component {
 
   handleChangeContent = e => {
     this.setState({ content: e.target.value })
-    console.log(this.props)
   }
 
   render() {
@@ -78,7 +78,6 @@ export default class EditReply extends Component {
                 {this.threadName()}
               </div>
               <div>
-                {/* <label htmlFor="thread-body">Reply:</label> */}
                 <textarea rows="10" name="reply-body" value={this.state.content} onChange={this.handleChangeContent} required></textarea>
               </div>
               <div>

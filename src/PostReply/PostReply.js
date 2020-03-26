@@ -22,14 +22,14 @@ export default class PostReply extends Component {
       )
     }
     else {
-      return <p>Loading... Please Wait</p>
+      return <p>Loading...</p>
     }
   }
 
   handleSubmit = e => {
     e.preventDefault()
     const content = this.state.content
-    const threadId = this.props.match.params.id
+    const threadId = this.props.match.params.threadid
     ForumService.postReply(threadId, content)
     this.props.history.push(`/forum/${threadId}`)
   }

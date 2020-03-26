@@ -16,7 +16,10 @@ export default class PostThread extends Component {
     let name = this.state.name
     let op = this.state.op
     ForumService.postThread(name, op)
-    this.props.history.push('/forum')
+      .then(thread => {
+        this.props.addThread(thread)
+        this.props.history.push(`/forum/${thread.id}`)
+      })
   }
 
   handleGoBack = () => {

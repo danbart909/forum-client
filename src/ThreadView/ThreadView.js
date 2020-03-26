@@ -22,25 +22,25 @@ export default class ThreadView extends Component {
     const thread = threads.find(x =>
       x.id == threadId
     )
-    console.log(threadId, threads, thread)
     if (thread) {
       return (
         <section className='thread'>
-          {thread.id}<br/>
-          {thread.name}<br/>
-          {thread.author}<br/>
-          {thread.op}
+          <div>
+            <p>#{thread.id} - {thread.author} - {thread.name}</p>
+            <p>{thread.op}</p>
+          </div>
           <Link to={`/forum/${thread.id}/edit`}><button>edit</button></Link>
           <button onClick={() => {this.deleteThread()}}>delete</button>
         </section>
       )
     }
     else {
-      return <p>Loading... Please Wait</p>
+      return <p>Loading...</p>
     }
   }
 
   renderReplies = () => {
+    const { history } = this.props
     const threadId = this.props.match.params.threadid
     const replies = this.props.forumState.replies
     const theseReplies = replies.filter(x =>
@@ -49,23 +49,23 @@ export default class ThreadView extends Component {
     if (theseReplies) {
       return (
         <section className='replies'>
-          <ul>
             {theseReplies.map(reply =>
-              <li key={reply.id}>
+              <div key={reply.id}>
                 <ReplyCard
                   id={reply.id}
                   threadId={reply.threadid}
                   author={reply.author}
                   content={reply.content}
+                  history={history}
+                  threads={this.props.forumState.threads}
                 />
-              </li>
+              </div>
             )}
-          </ul>
         </section>
       )
     }
     else {
-      return <p>Loading... Please Wait</p>
+      return <p>Loading...</p>
     }
   }
 

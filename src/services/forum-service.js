@@ -89,7 +89,7 @@ const ForumService = {
         'content-type': 'application/json',
         'authorization': `bearer 0000`,
       },
-      body: JSON.stringify(content),
+      body: JSON.stringify({ content }),
     })
       .then(res =>
         (!res.ok)
@@ -100,14 +100,14 @@ const ForumService = {
         console.error(error)
       })
   },
-  editThread(id, name, OP) {
+  editThread(id, author, name, op) {
     return fetch(`${config.API_ENDPOINT}/threads/${id}`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',
         'authorization': `bearer 0000`,
       },
-      body: JSON.stringify({ name, OP }),
+      body: JSON.stringify({ author, name, op }),
     })
       .then(res =>
         (!res.ok)

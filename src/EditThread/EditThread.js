@@ -7,8 +7,28 @@ export default class EditThread extends Component {
     super(props)
     this.state = {
       error: null,
+      id: '',
       name: '',
       op: ''
+    }
+  }
+
+  componentDidMount = () => {
+    const threadid = this.props.match.params.threadid
+    const { threads } = this.props.forumState
+    const thread = threads.find(x =>
+      x.id == threadid
+    )
+    const numberId = Number(threadid)
+    if (thread) {
+      this.setState({
+        id: numberId,
+        name: thread.name,
+        op: thread.op
+      })
+    }
+    else {
+      return <p>Loading...</p>
     }
   }
 
@@ -17,9 +37,9 @@ export default class EditThread extends Component {
     let id = this.props.match.params.threadid
     let name = this.state.name
     let op = this.state.op
-    ForumService.editThread(id, name, op)
-    this.props.history.push(`/threads/${id}`)
-    console.log(id, name, op)
+    let author = 'defaultuser'
+    ForumService.editThread(id, author, name, op)
+    this.props.history.push(`/forum/${id}`)
   }
 
   handleGoBack = () => {
@@ -47,14 +67,14 @@ export default class EditThread extends Component {
             <form className='edit-thread-form' onSubmit={(e) => {this.handleSubmit(e)}}>
               <div>
                 <label htmlFor="thread-name">Thread Name:</label>
-                <input type="text" name="thread-name" onChange={this.handleChangeName} required/>
+                <input type="text" name="thread-name" value={this.state.name} onChange={this.handleChangeName} required/>
               </div>
               <div>
                 <label htmlFor="thread-body">Thread Body:</label>
-                <textarea rows="10" name="thread-body" onChange={this.handleChangeOp} required></textarea>
+                <textarea rows="10" name="thread-body" value={this.state.op} onChange={this.handleChangeOp} required></textarea>
               </div>
               <div>
-                <button type='submit'>Post Thread</button>
+                <button type='submit'>Edit Thread</button>
                 <button onClick={() => {this.handleGoBack()}}>Go Back</button>
               </div>
             </form>

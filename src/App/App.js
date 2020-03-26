@@ -22,6 +22,12 @@ export default class App extends Component {
       replies: []
     }
 
+  addThread = thread => {
+    this.setState({
+      threads: [...this.state.threads, thread]
+    })
+  }
+
   setInitialStateThreads = (threads) => {
     this.setState({ threads })
   }
@@ -103,7 +109,7 @@ export default class App extends Component {
             />
             <Route
               exact path={'/forum/post'}
-              render={(props) => <PostThread {...props} forumState={this.state} />}
+              render={(props) => <PostThread {...props} addThread={(thread) => this.addThread(thread)} forumState={this.state} />}
             />
             <Route
               path={'/forum/:threadid/reply'}
