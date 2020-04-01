@@ -20,10 +20,10 @@ import config from '../config'
 
 export default class App extends Component {
 
-    state = {
-      threads: [],
-      replies: []
-    }
+  state = {
+    threads: [],
+    replies: []
+  }
 
   addThread = thread => {
     this.setState({
