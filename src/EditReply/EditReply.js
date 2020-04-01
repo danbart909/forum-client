@@ -48,10 +48,11 @@ export default class EditReply extends Component {
     let id = this.props.match.params.id
     let threadid = this.props.match.params.threadid
     let content = this.state.content
-    ForumService.editReply(id, content)
     let thread = this.props.forumState.threads.find(x => 
       x.id == threadid
     )
+    ForumService.editReply(id, content)
+    this.props.editReply({id, content})
     this.props.history.push(`/forum/${thread.id}`)
   }
 
@@ -69,18 +70,16 @@ export default class EditReply extends Component {
         <header role="banner">
           <h1>Thinkful Forum Edit Reply Form</h1>
         </header>
-        <section>
-          <div id="one">[Edit Reply]</div>
-          <hr/>
-          <div>
-            <form className='edit-reply-form' onSubmit={(e) => {this.handleSubmit(e)}}>
-              <div>
+        <section id='s-edit-reply-form'>
+          <div id='div-edit-reply-form-container'>
+            <form id='form-edit-reply-form' onSubmit={(e) => {this.handleSubmit(e)}}>
+              <div id='div-edit-reply-thread-name'>
                 {this.threadName()}
               </div>
-              <div>
+              <div id='div-edit-reply-body'>
                 <textarea rows="10" name="reply-body" value={this.state.content} onChange={this.handleChangeContent} required></textarea>
               </div>
-              <div>
+              <div id='div-edit-reply-buttons'>
                 <button type='submit'>Edit Reply</button>
                 <button onClick={() => {this.handleGoBack()}}>Go Back</button>
               </div>

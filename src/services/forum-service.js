@@ -1,28 +1,41 @@
 import config from '../config'
+import TokenService from './token-service'
 
 const ForumService = {
   getThreads() {
     return fetch(`${config.API_ENDPOINT}/threads`, {
       headers: {
-        'authorization': `bearer ${config.TOKEN_KEY}`,
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      )
+    .then(res =>
+      (!res.ok)
+        ? res.json().then(e => Promise.reject(e))
+        : res.json()
+    )
   },
-  postReply(threadId, content) {
-    let author = 'defaultuser'
+  getReplies() {
+    return fetch(`${config.API_ENDPOINT}/replies`, {
+      headers: {
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
+      },
+    })
+    .then(res =>
+      (!res.ok)
+        ? res.json().then(e => Promise.reject(e))
+        : res.json()
+    )
+  },
+  postReply(threadid, author, content) {
     const item = {
-      threadid: threadId, author, content
+      threadid, author, content
     }
+    console.log(item)
     return fetch(`${config.API_ENDPOINT}/replies`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        'authorization': `bearer 0000`,
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify(item),
     })
@@ -35,19 +48,14 @@ const ForumService = {
         console.error(error)
       })
   },
-  postThread(name, op) {
-    let author = 'defaultuser'
+  postThread(author, name, op) {
     return fetch(`${config.API_ENDPOINT}/threads`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        'authorization': `bearer 0000`,
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
-      body: JSON.stringify({
-        author: author,
-        name: name,
-        op: op,
-      }),
+      body: JSON.stringify({ author, name, op }),
     })
       .then(res =>
         (!res.ok)
@@ -63,7 +71,7 @@ const ForumService = {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json',
-        'authorization': `bearer 0000`,
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     })
       .catch(error => {
@@ -75,7 +83,7 @@ const ForumService = {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json',
-        'authorization': `bearer 0000`,
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     })
       .catch(error => {
@@ -87,7 +95,7 @@ const ForumService = {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',
-        'authorization': `bearer 0000`,
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({ content }),
     })
@@ -105,7 +113,7 @@ const ForumService = {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',
-        'authorization': `bearer 0000`,
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({ author, name, op }),
     })

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 // import './PostThread.css'
 import ForumService from '../services/forum-service'
+import TokenService from '../services/token-service'
 export default class PostThread extends Component {
   constructor(props) {
     super(props)
@@ -13,10 +14,14 @@ export default class PostThread extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
+    const decodedToken = TokenService.readJwtToken()
+    const author = decodedToken.sub
     let name = this.state.name
     let op = this.state.op
-    ForumService.postThread(name, op)
+    console.log(author, name, op)
+    ForumService.postThread(author, name, op)
       .then(thread => {
+        console.log(thread, thread.id)
         this.props.addThread(thread)
         this.props.history.push(`/forum/${thread.id}`)
       })
@@ -40,21 +45,19 @@ export default class PostThread extends Component {
         <header role="banner">
           <h1>Thinkful Forum New Thread Form</h1>
         </header>
-        <section>
-          <div id="one">[Post New Thread]</div>
-          <hr/>
-          <div>
-            <form className='post-thread-form' onSubmit={(e) => {this.handleSubmit(e)}}>
-              <div>
+        <section id='s-post-thread-form'>
+          <div id='div-post-thread-form-container'>
+            <form id='form-post-thread-form' onSubmit={(e) => {this.handleSubmit(e)}}>
+              <div id='div-post-thread-name'>
                 <label htmlFor="thread-name">Thread Name:</label>
                 <input type="text" name="thread-name" onChange={this.handleChangeName} required/>
               </div>
-              <div>
+              <div id='div-post-thread-body'>
                 <label htmlFor="thread-body">Thread Body:</label>
                 <textarea rows="10" name="thread-body" onChange={this.handleChangeOp} required></textarea>
               </div>
-              <div>
-                <button type='submit'>Post Thread</button>
+              <div id='div-post-thread-buttons'>
+                <button type='submit' disabled={!this.state.name || !this.state.op}>Post Thread</button>
                 <button onClick={() => {this.handleGoBack()}}>Go Back</button>
               </div>
             </form>

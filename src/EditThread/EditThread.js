@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 // import './EditThread.css'
 import ForumService from '../services/forum-service'
+import TokenService from '../services/token-service'
 
 export default class EditThread extends Component {
   constructor(props) {
@@ -37,8 +38,10 @@ export default class EditThread extends Component {
     let id = this.props.match.params.threadid
     let name = this.state.name
     let op = this.state.op
-    let author = 'defaultuser'
+    const decodedToken = TokenService.readJwtToken()
+    const author = decodedToken.sub
     ForumService.editThread(id, author, name, op)
+    this.props.editThread({id, author, name, op})
     this.props.history.push(`/forum/${id}`)
   }
 
@@ -60,20 +63,18 @@ export default class EditThread extends Component {
         <header role="banner">
           <h1>Thinkful Forum Edit Thread Form</h1>
         </header>
-        <section>
-          <div id="one">[Edit Thread]</div>
-          <hr/>
-          <div>
-            <form className='edit-thread-form' onSubmit={(e) => {this.handleSubmit(e)}}>
-              <div>
+        <section id='s-edit-thread-form'>
+          <div id='div-edit-thread-form-container'>
+            <form id='form-edit-thread-form' onSubmit={(e) => {this.handleSubmit(e)}}>
+              <div id='div-edit-thread-name'>
                 <label htmlFor="thread-name">Thread Name:</label>
                 <input type="text" name="thread-name" value={this.state.name} onChange={this.handleChangeName} required/>
               </div>
-              <div>
+              <div id='div-edit-thread-body'>
                 <label htmlFor="thread-body">Thread Body:</label>
                 <textarea rows="10" name="thread-body" value={this.state.op} onChange={this.handleChangeOp} required></textarea>
               </div>
-              <div>
+              <div id='div-edit-thread-buttons'>
                 <button type='submit'>Edit Thread</button>
                 <button onClick={() => {this.handleGoBack()}}>Go Back</button>
               </div>

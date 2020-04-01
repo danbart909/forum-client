@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 nav {
   position: fixed;
   top: 0;
@@ -7,12 +11,19 @@ nav {
   background-color: #7C7C7C
 }
 
+#div-login {
+  outline: 1px solid black;
+}
+
+#div-logout {
+  outline: 1px solid black;
+}
+
 body {
   font-family: 'Open Sans', regular;
-  font-size: 18px;
+  font-size: 15px;
   background-color: whitesmoke;
   color: black;
-  box-sizing: border-box;
   text-align: center;
   margin: 30px 0 0 0;
 /*  min-width: 350px;*/
@@ -25,4 +36,281 @@ main {
   flex-direction: column;
   align-content: center;
   align-items: center;
+  outline: 1px solid black;
+}
+
+header {
+  outline: 1px solid black;
+}
+
+section {
+  outline: 1px solid black;
+}
+
+.button-edit-button {
+  outline: 1px solid black;
+}
+
+.button-delete-button {
+  outline: 1px solid black;
+}
+
+
+/* ------------- ForumView */
+
+
+#s-forum-view {
+  outline: 1px solid black;
+}
+
+#div-new-thread-button {
+  outline: 1px solid green;
+}
+
+
+/* ------------- ThreadCard */
+
+
+.div-thread-card {
+  outline: 1px solid blue;
+}
+
+.div-forum-thread-id-author {
+  outline: 1px solid black;
+}
+
+.div-forum-thread-name {
+  outline: 1px solid black;
+}
+
+
+/* ------------- ThreadView */
+
+
+#div-post-reply-button {
+  outline: 1px solid black;
+}
+
+
+/* renderOP */
+
+
+.s-thread {
+  outline: 1px solid black;
+}
+
+#div-thread {
+  outline: 1px solid black;
+}
+
+#div-thread-id-author-name{
+  outline: 1px solid black;
+}
+
+#div-thread-op{
+  outline: 1px solid black;
+}
+
+#div-thread-buttons{
+  outline: 1px solid black;
+}
+
+
+/* renderReplies */
+
+
+.s-replies {
+  outline: 1px solid black;
+}
+
+.div-reply-card {
+  outline: 1px solid black;
+}
+
+
+/* ------------- ReplyCard */
+
+
+#div-reply-card-author{
+  outline: 1px solid black;
+}
+
+#div-reply-card-content{
+  outline: 1px solid black;
+}
+
+#div-reply-edit-delete-buttons{
+  outline: 1px solid black;
+}
+
+
+/* ------------- LoginForm */
+
+
+#s-login-form{
+  outline: 1px solid black;
+}
+
+#form-login-form{
+  outline: 1px solid black;
+}
+
+#div-login-form-container{
+  outline: 1px solid black;
+}
+
+#div-login-username{
+  outline: 1px solid black;
+}
+
+#div-login-password{
+  outline: 1px solid black;
+}
+
+#div-login-buttons{
+  outline: 1px solid black;
+}
+
+
+/* ------------- RegistrationForm */
+
+
+#s-registration-form{
+  outline: 1px solid black;
+}
+
+#form-registration-form{
+  outline: 1px solid black;
+}
+
+#div-registration-username {
+  outline: 1px solid black;
+}
+
+#div-registration-realname {
+  outline: 1px solid black;
+}
+
+#div-registration-password {
+  outline: 1px solid black;
+}
+
+#div-registration-match-password {
+  outline: 1px solid black;
+}
+
+#div-registration-buttons {
+  outline: 1px solid black;
+}
+
+
+/* ------------- Post Thread */
+
+
+#s-post-thread-form {
+  outline: 1px solid black;
+}
+
+#div-post-thread-form-container {
+  outline: 1px solid black;
+}
+
+#form-post-thread-form {
+  outline: 1px solid black;
+}
+
+#div-post-thread-name {
+  outline: 1px solid black;
+}
+
+#div-post-thread-body {
+  outline: 1px solid black;
+}
+
+#div-post-thread-buttons {
+  outline: 1px solid black;
+}
+
+
+/* ------------- Post Reply */
+
+
+#s-post-reply-form {
+  outline: 1px solid black;
+}
+
+#div-post-reply-form-container {
+  outline: 1px solid black;
+}
+
+#form-post-reply-form {
+  outline: 1px solid black;
+}
+
+#div-post-reply-thread-name {
+  outline: 1px solid black;
+}
+
+#div-post-reply-body {
+  outline: 1px solid black;
+}
+
+#div-post-reply-buttons {
+  outline: 1px solid black;
+}
+
+
+/* ------------- Edit Thread */
+
+
+#s-edit-thread-form {
+  outline: 1px solid black;
+}
+
+#div-edit-thread-form-container {
+  outline: 1px solid black;
+}
+
+#form-edit-thread-form {
+  outline: 1px solid black;
+}
+
+#div-edit-thread-name {
+  outline: 1px solid black;
+}
+
+#div-edit-thread-body {
+  outline: 1px solid black;
+}
+
+#div-edit-thread-buttons {
+  outline: 1px solid black;
+}
+
+
+/* ------------- Edit Reply */
+
+
+#s-edit-reply-form {
+  outline: 1px solid black;
+}
+
+#div-edit-reply-form-container {
+  outline: 1px solid black;
+}
+
+#form-edit-reply-form {
+  outline: 1px solid black;
+}
+
+#div-edit-reply-thread-name {
+  outline: 1px solid black;
+}
+
+#div-edit-reply-body {
+  outline: 1px solid black;
+}
+
+#div-edit-reply-buttons {
+  outline: 1px solid black;
 }
