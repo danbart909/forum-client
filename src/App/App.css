@@ -2,28 +2,38 @@
   box-sizing: border-box;
 }
 
+a {
+  color: lightskyblue;
+}
+
+a:hover {
+  color: rgb(3, 123, 170);
+}
+
 nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   padding: 5px 0 5px 0;
-  background-color: #7C7C7C
+  background-color: #0a1629;
 }
 
-#div-login {
-  outline: 1px solid black;
+button {
+  outline: none;
+  background-color: lightskyblue;
+  color: black;
 }
 
-#div-logout {
-  outline: 1px solid black;
+button:hover {
+  background-color: rgb(3, 123, 170);
 }
 
 body {
   font-family: 'Open Sans', regular;
-  font-size: 15px;
-  background-color: whitesmoke;
-  color: black;
+  font-size: 14px;
+  background-color: #17212f;
+  color: whitesmoke;
   text-align: center;
   margin: 30px 0 0 0;
 /*  min-width: 350px;*/
@@ -36,23 +46,27 @@ main {
   flex-direction: column;
   align-content: center;
   align-items: center;
-  outline: 1px solid black;
 }
 
 header {
-  outline: 1px solid black;
+  margin: 0 0 5px 0;
+  outline: none;
 }
 
 section {
-  outline: 1px solid black;
+  outline: none;
 }
 
-.button-edit-button {
-  outline: 1px solid black;
+textarea {
+  width: 100%;
 }
 
-.button-delete-button {
-  outline: 1px solid black;
+#div-login {
+  outline: 1px solid grey;
+}
+
+#div-logout {
+  outline: 1px solid grey;
 }
 
 
@@ -60,11 +74,17 @@ section {
 
 
 #s-forum-view {
-  outline: 1px solid black;
+  width: 70vw;
 }
 
 #div-new-thread-button {
-  outline: 1px solid green;
+  outline: none;
+  margin: 0 0 10px 0;
+}
+
+#button-new-thread-button {
+  outline: none;
+  margin: 0 0 5px 0;
 }
 
 
@@ -72,23 +92,32 @@ section {
 
 
 .div-thread-card {
-  outline: 1px solid blue;
+  outline: 1px solid grey;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 70vw;
+  margin: 10px 0 0 0;
 }
 
-.div-forum-thread-id-author {
-  outline: 1px solid black;
+.div-forum-thread-id-name {
+  outline: none;
+  width: 65%;
 }
 
-.div-forum-thread-name {
-  outline: 1px solid black;
+.div-forum-thread-author {
+  outline: none;
+  width: 35%;
 }
 
 
 /* ------------- ThreadView */
 
 
-#div-post-reply-button {
-  outline: 1px solid black;
+#div-post-reply-buttons {
+  outline: none;
+  margin: 5px 0 0 0;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 
@@ -96,23 +125,50 @@ section {
 
 
 .s-thread {
-  outline: 1px solid black;
+  outline: none;
+  margin: 0 0 15px 0;
+  width: 80vw;
+  display: flex;
 }
 
 #div-thread {
-  outline: 1px solid black;
+  outline: none;
+  width: 100%;
 }
 
-#div-thread-id-author-name{
-  outline: 1px solid black;
+#div-thread-id-author-name {
+  outline: 1px solid grey;
 }
 
-#div-thread-op{
-  outline: 1px solid black;
+#div-thread-op {
+  outline: 1px solid grey;
 }
 
-#div-thread-buttons{
-  outline: 1px solid black;
+#div-edit-op-buttons {
+  outline: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 12%;
+  font-size: 8px;
+  max-width: 40px;
+}
+
+#button-edit-thread {
+  outline: none;
+  width: 100%;
+  font-size: 10px;
+}
+
+#button-delete-thread {
+  outline: none;
+  width: 100%;
+  font-size: 10px;
+}
+
+#button-delete-thread:hover {
+  background-color: darkred;
+  color: white;
 }
 
 
@@ -120,87 +176,148 @@ section {
 
 
 .s-replies {
-  outline: 1px solid black;
+  width: 80vw;
 }
 
 .div-reply-card {
-  outline: 1px solid black;
+  margin: 0px 0 10px 0;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 
 /* ------------- ReplyCard */
 
 
-#div-reply-card-author{
-  outline: 1px solid black;
+#div-reply-card-author {
+  outline: 1px solid grey;
+  text-align: center;
+  align-self: center;
+  width: 20%;
 }
 
-#div-reply-card-content{
-  outline: 1px solid black;
+#div-reply-card-second-half {
+  display: flex;
+  width: 80%;
 }
 
-#div-reply-edit-delete-buttons{
-  outline: 1px solid black;
+#div-reply-card-content {
+  outline: 1px solid grey;
+  width: 100%;
+  align-self: center;
+}
+
+#div-reply-edit-delete-buttons {
+  outline: 1px solid grey;
+  align-self: center;
+  width: 15%;
+  font-size: 8px;
+  max-width: 40px;
+}
+
+.button-edit-button {
+  outline: none;
+  width: 100%;
+  font-size: 10px;
+}
+
+.button-delete-button {
+  outline: none;
+  width: 100%;
+  font-size: 10px;
+}
+
+.button-delete-button:hover {
+  background-color: darkred;
+  color: white;
 }
 
 
 /* ------------- LoginForm */
 
 
-#s-login-form{
-  outline: 1px solid black;
+#s-login-form {
+  outline: none;
 }
 
-#form-login-form{
-  outline: 1px solid black;
+#form-login-form {
+  outline: none;
 }
 
-#div-login-form-container{
-  outline: 1px solid black;
+#div-login-form-container {
+  outline: none;
 }
 
-#div-login-username{
-  outline: 1px solid black;
+#div-login-username {
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 10px 0;
 }
 
-#div-login-password{
-  outline: 1px solid black;
+#div-login-password {
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 10px 0;
 }
 
-#div-login-buttons{
-  outline: 1px solid black;
+#div-login-buttons {
+  outline: none;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 
 /* ------------- RegistrationForm */
 
 
-#s-registration-form{
-  outline: 1px solid black;
+#s-registration-form {
+  outline: none;
 }
 
-#form-registration-form{
-  outline: 1px solid black;
+#form-registration-form {
+  outline: none;
 }
 
 #div-registration-username {
-  outline: 1px solid black;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 10px 0;
 }
 
 #div-registration-realname {
-  outline: 1px solid black;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 10px 0;
 }
 
 #div-registration-password {
-  outline: 1px solid black;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 10px 0;
 }
 
 #div-registration-match-password {
-  outline: 1px solid black;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 10px 0;
 }
 
 #div-registration-buttons {
-  outline: 1px solid black;
+  outline: none;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 
@@ -208,27 +325,38 @@ section {
 
 
 #s-post-thread-form {
-  outline: 1px solid black;
+  outline: none;
+  width: 70vw;
 }
 
 #div-post-thread-form-container {
-  outline: 1px solid black;
+  outline: none;
 }
 
 #form-post-thread-form {
-  outline: 1px solid black;
+  outline: none;
 }
 
 #div-post-thread-name {
-  outline: 1px solid black;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 5px 0;
 }
 
 #div-post-thread-body {
-  outline: 1px solid black;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #div-post-thread-buttons {
-  outline: 1px solid black;
+  outline: none;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px 0 0 0;
 }
 
 
@@ -236,27 +364,33 @@ section {
 
 
 #s-post-reply-form {
-  outline: 1px solid black;
+  outline: none;
+  width: 70vw;
 }
 
 #div-post-reply-form-container {
-  outline: 1px solid black;
+  outline: none;
 }
 
 #form-post-reply-form {
-  outline: 1px solid black;
+  outline: none;
 }
 
 #div-post-reply-thread-name {
-  outline: 1px solid black;
+  outline: none;
+  margin: 0 0 3px 0;
 }
 
 #div-post-reply-body {
-  outline: 1px solid black;
+  outline: none;
 }
 
 #div-post-reply-buttons {
-  outline: 1px solid black;
+  outline: none;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin: 10px 0 0 0;
 }
 
 
@@ -264,27 +398,39 @@ section {
 
 
 #s-edit-thread-form {
-  outline: 1px solid black;
+  outline: none;
+  width: 70vw;
 }
 
 #div-edit-thread-form-container {
-  outline: 1px solid black;
+  outline: none;
 }
 
 #form-edit-thread-form {
-  outline: 1px solid black;
+  outline: none;
 }
 
 #div-edit-thread-name {
-  outline: 1px solid black;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 10px 0;
 }
 
 #div-edit-thread-body {
-  outline: 1px solid black;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 10px 0;
 }
 
 #div-edit-thread-buttons {
-  outline: 1px solid black;
+  outline: none;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px 0 0 0;
 }
 
 
@@ -292,25 +438,29 @@ section {
 
 
 #s-edit-reply-form {
-  outline: 1px solid black;
+  outline: none;
+  width: 70vw;
 }
 
 #div-edit-reply-form-container {
-  outline: 1px solid black;
+  outline: none;
 }
 
 #form-edit-reply-form {
-  outline: 1px solid black;
+  outline: none;
 }
 
 #div-edit-reply-thread-name {
-  outline: 1px solid black;
+  outline: none;
 }
 
 #div-edit-reply-body {
-  outline: 1px solid black;
+  outline: none;
 }
 
 #div-edit-reply-buttons {
-  outline: 1px solid black;
+  outline: none;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px 0 0 0;
 }

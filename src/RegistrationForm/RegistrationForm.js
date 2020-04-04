@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import './RegistrationForm.css'
 import AuthApiService from '../services/auth-api-service'
 export default class RegistrationForm extends Component {
   constructor(props) {
@@ -39,14 +38,12 @@ export default class RegistrationForm extends Component {
 
     AuthApiService.postUser({ user })
       .then(req => {
-        console.log(this.state, user)
         this.setState({
           username: '',
           realname: '',
           password: '',
           matchpassword: ''
         })
-        console.log(this.state, user)
       })
       .catch(res => {
         this.setState({ error: res.error })

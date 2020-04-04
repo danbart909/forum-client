@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import './PostReply.css'
 import ForumService from '../services/forum-service'
 import TokenService from '../services/token-service'
 
@@ -34,17 +33,15 @@ export default class PostReply extends Component {
     const threadId = this.props.match.params.threadid
     const decodedToken = TokenService.readJwtToken()
     const author = decodedToken.sub
-    console.log(content, author, threadId)
     ForumService.postReply(threadId, author, content)
       .then(reply => {
-        console.log(reply)
         this.props.addReply(reply)
         this.props.history.push(`/forum/${threadId}`)
       })
   }
 
   handleGoBack = () => {
-    const threadId = this.props.match.params.id
+    const threadId = this.props.match.params.threadid
     this.props.history.push(`/forum/${threadId}`)
   }
 
@@ -62,10 +59,9 @@ export default class PostReply extends Component {
           <div id='div-post-reply-form-container'>
             <form id='form-post-reply-form' onSubmit={(e) => {this.handleSubmit(e)}}>
               <div id='div-post-reply-thread-name'>
-                {this.threadName()}
+                Replying to: {this.threadName()}
               </div>
               <div id='div-post-reply-body'>
-                {/* <label htmlFor="thread-body">Reply:</label> */}
                 <textarea rows="10" name="reply-body" onChange={this.handleChangeContent} required></textarea>
               </div>
               <div id='div-post-reply-buttons'>

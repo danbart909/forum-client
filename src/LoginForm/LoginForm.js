@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import './LoginForm.css'
 import AuthApiService from '../services/auth-api-service'
 export default class LoginForm extends Component {
   constructor(props) {
@@ -34,7 +33,7 @@ export default class LoginForm extends Component {
           password: ''
         })
         this.props.history.push(`/forum`)
-        // window.location.reload(false)
+        window.location.reload(false)
       })
       .catch(res => {
         this.setState({ error: res.error })

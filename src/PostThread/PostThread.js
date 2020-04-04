@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import './PostThread.css'
 import ForumService from '../services/forum-service'
 import TokenService from '../services/token-service'
 export default class PostThread extends Component {
@@ -18,10 +17,8 @@ export default class PostThread extends Component {
     const author = decodedToken.sub
     let name = this.state.name
     let op = this.state.op
-    console.log(author, name, op)
     ForumService.postThread(author, name, op)
       .then(thread => {
-        console.log(thread, thread.id)
         this.props.addThread(thread)
         this.props.history.push(`/forum/${thread.id}`)
       })

@@ -30,7 +30,6 @@ const ForumService = {
     const item = {
       threadid, author, content
     }
-    console.log(item)
     return fetch(`${config.API_ENDPOINT}/replies`, {
       method: 'POST',
       headers: {

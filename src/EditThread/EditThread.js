@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import './EditThread.css'
 import ForumService from '../services/forum-service'
 import TokenService from '../services/token-service'
 
@@ -46,7 +45,8 @@ export default class EditThread extends Component {
   }
 
   handleGoBack = () => {
-    this.props.history.push('/forum')
+    const threadId = this.props.match.params.threadid
+    this.props.history.push(`/forum/${threadId}`)
   }
 
   handleChangeName = e => {

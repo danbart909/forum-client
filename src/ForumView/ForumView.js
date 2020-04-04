@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import './ForumView.css'
 import { Link } from 'react-router-dom'
 import ThreadCard from '../ThreadCard/ThreadCard'
 import TokenService from '../services/token-service'
@@ -23,7 +22,7 @@ export default class ForumView extends Component {
   renderNewThreadButton = () => {
     if (TokenService.hasAuthToken()) {
       return (
-        <div id='div-new-thread-button'><Link to='/forum/post'><button>New Thread</button></Link></div>
+        <div id='div-new-thread-button'><Link to='/forum/post'><button id='button-new-thread-button'>New Thread</button></Link></div>
       )
     } else {
       return (

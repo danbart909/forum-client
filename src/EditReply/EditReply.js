@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import './EditReply.css'
 import ForumService from '../services/forum-service'
 
 export default class EditReply extends Component {
@@ -57,7 +56,8 @@ export default class EditReply extends Component {
   }
 
   handleGoBack = () => {
-    this.props.history.push('/forum')
+    const threadId = this.props.match.params.threadid
+    this.props.history.push(`/forum/${threadId}`)
   }
 
   handleChangeContent = e => {
@@ -73,9 +73,6 @@ export default class EditReply extends Component {
         <section id='s-edit-reply-form'>
           <div id='div-edit-reply-form-container'>
             <form id='form-edit-reply-form' onSubmit={(e) => {this.handleSubmit(e)}}>
-              <div id='div-edit-reply-thread-name'>
-                {this.threadName()}
-              </div>
               <div id='div-edit-reply-body'>
                 <textarea rows="10" name="reply-body" value={this.state.content} onChange={this.handleChangeContent} required></textarea>
               </div>

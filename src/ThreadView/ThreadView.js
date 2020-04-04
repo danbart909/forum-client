@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import './ThreadView.css'
 import { Link } from 'react-router-dom'
 import ReplyCard from '../ReplyCard/ReplyCard'
 import ForumService from '../services/forum-service'
@@ -7,12 +6,15 @@ import TokenService from '../services/token-service'
 
 export default class ThreadView extends Component {
 
+  handleGoBack = () => {
+    this.props.history.push(`/forum`)
+  }
+
   deleteThread = () => {
     let id = this.props.match.params.threadid
     const replies = this.props.forumState.replies.find(x =>
       x.threadid == id
     )
-    console.log(replies)
     if (!replies) {
       ForumService.deleteThread(id)
       this.props.deleteThread(id)
@@ -22,33 +24,18 @@ export default class ThreadView extends Component {
     }
   }
 
-  renderButtons = (author, id) => {
+  renderReplyButtons = (author, id) => {
     if (TokenService.hasAuthToken()) {
       const decodedToken = TokenService.readJwtToken()
       const username = decodedToken.sub
       if (author == username) {
         return (
           <div id='div-thread-buttons'>
-            <Link to={`/forum/${id}/edit`}><button>edit</button></Link>
-            <button onClick={() => {this.deleteThread()}}>delete</button>
+            <Link to={`/forum/${id}/edit`}><button id='button-edit-reply'>edit</button><br/></Link>
+            <button  id='button-delete-reply' onClick={() => {this.deleteThread()}}>del</button>
           </div>
         )
       }
-    } else {
-      return (
-        <></>
-      )
-    }
-  }
-
-  renderNewThreadButton = () => {
-    const threadId = this.props.match.params.threadid
-    if (TokenService.hasAuthToken()) {
-      return (
-        <div id='div-new-thread-button'>
-          <Link to={`${threadId}/reply`}><button>Post Reply</button></Link>
-        </div>
-      )
     } else {
       return (
         <></>
@@ -69,12 +56,32 @@ export default class ThreadView extends Component {
             <div id='div-thread-id-author-name'>#{thread.id} - {thread.author} - {thread.name}</div>
             <div id='div-thread-op'>{thread.op}</div>
           </div>
-          {this.renderButtons(thread.author, thread.id)}
+          {this.renderOPButtons(thread)}
         </section>
       )
     }
     else {
       return <p>Loading...</p>
+    }
+  }
+
+  renderOPButtons = (thread) => {
+    const threadId = this.props.match.params.threadid
+    if (TokenService.hasAuthToken()) {
+      const decodedToken = TokenService.readJwtToken()
+      const username = decodedToken.sub
+      if (thread.author == username) {
+        return (
+          <div id='div-edit-op-buttons'>
+            <Link to={`${threadId}/edit`}><button id='button-edit-thread'>edit</button></Link>
+            <button id='button-delete-thread' onClick={() => {this.deleteThread()}}>del</button>
+          </div>
+        )
+      } else {
+        return (
+          <></>
+        )
+      }
     }
   }
 
@@ -109,6 +116,22 @@ export default class ThreadView extends Component {
     }
   }
 
+  renderPostReplyButtons = () => {
+    const threadId = this.props.match.params.threadid
+    if (TokenService.hasAuthToken()) {
+      return (
+        <div id='div-post-reply-buttons'>
+          <Link to={`${threadId}/reply`}><button>Post Reply</button></Link>
+          <Link to={`/forum`}><button>Go Back</button></Link>
+        </div>
+      )
+    } else {
+      return (
+        <></>
+      )
+    }
+  }
+
   render() {
     return (
       <>
@@ -117,7 +140,7 @@ export default class ThreadView extends Component {
         </header>
         {this.renderOP()}
         {this.renderReplies()}
-        {this.renderNewThreadButton()}
+        {this.renderPostReplyButtons()}
       </>
     )
   }

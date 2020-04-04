@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import './PageNotFound.css'
 
 export default class PageNotFound extends Component {
   render() {
