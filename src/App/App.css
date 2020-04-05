@@ -97,16 +97,20 @@ textarea {
   flex-wrap: nowrap;
   width: 70vw;
   margin: 10px 0 0 0;
+  min-height: 35px;
+  align-items: stretch;
 }
 
 .div-forum-thread-id-name {
   outline: 1px solid grey;
   width: 65%;
+  padding: 6px 0 0 0;
 }
 
 .div-forum-thread-author {
   outline: 1px solid grey;
   width: 35%;
+  padding: 6px 0 0 0;
 }
 
 
@@ -125,23 +129,56 @@ textarea {
 
 
 .s-thread {
-  outline: none;
   margin: 0 0 15px 0;
   width: 80vw;
   display: flex;
 }
 
 #div-thread {
-  outline: none;
+  outline: 2px gold solid;
+  width: 100%;
+  display: flex;
+  min-height: 125px;
+}
+
+#div-thread-left-half {
+  outline: 1px solid grey;
+  display: flex;
+  width: 20%;
+  justify-content: center;
+}
+
+#div-thread-author {
+  outline: 1px solid grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
   width: 100%;
 }
 
-#div-thread-id-author-name {
+#div-thread-right-half {
   outline: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  min-height: 75px;
+}
+
+#div-thread-name {
+  outline: 1px solid grey;
+  width: 100%;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #div-thread-op {
   outline: 1px solid grey;
+  display: flex;
+  height: 100%;
+  padding: 5px 0 0 8px;
 }
 
 #div-edit-op-buttons {
@@ -177,12 +214,15 @@ textarea {
 
 .s-replies {
   width: 80vw;
+  outline: 1px grey solid;
 }
 
 .div-reply-card {
-  margin: 0px 0 10px 0;
+  outline: none;
+  margin: 0px 0 0px 0;
   display: flex;
   justify-content: space-evenly;
+  min-height: 75px;
 }
 
 
@@ -192,7 +232,7 @@ textarea {
 #div-reply-card-author {
   outline: 1px solid grey;
   text-align: center;
-  width: 20%;
+  min-width: 20%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -200,16 +240,16 @@ textarea {
 
 #div-reply-card-second-half {
   display: flex;
-  width: 80%;
+  max-width: 80%;
+  width: 100%;
 }
 
 #div-reply-card-content {
   outline: 1px solid grey;
   width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
   height: 100%;
+  padding: 6px 0 0 8px;
 }
 
 #div-reply-edit-delete-buttons {
@@ -317,6 +357,23 @@ textarea {
   flex-direction: column;
   align-items: center;
   margin: 0 0 10px 0;
+}
+
+#div-registration-errors {
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 10px 0;
+}
+
+#div-registration-errors-alert {
+  outline: 1px solid gray;
+}
+
+#div-registration-erros-instructions {
+  outline: 1px solid gray;
+  font-size: 10px;
 }
 
 #div-registration-buttons {

@@ -7,7 +7,8 @@ export default class RegistrationForm extends Component {
       username: '',
       realname: '',
       password: '',
-      matchpassword: ''
+      matchpassword: '',
+      error: ''
     }
   }
 
@@ -52,6 +53,14 @@ export default class RegistrationForm extends Component {
     this.props.history.push('/login')
   }
 
+  showErrors = () => {
+    if (this.state.error) {
+      return this.state.error
+    } else {
+      return <></>
+    }
+  }
+
   render() {
     return (
       <>
@@ -75,6 +84,13 @@ export default class RegistrationForm extends Component {
             <div id='div-registration-match-password'>
               <label htmlFor="register-match-password">Match Password:</label>
               <input type="text" value={this.state.matchpassword} onChange={this.handleChangeMatchpassword} name="register-match-password" required/>
+            </div>
+            <div id='div-registration-errors'>
+              <div id='div-registration-errors-alert'>{this.showErrors()}</div>
+              <div id='div-registration-erros-instructions'>
+                <div>All fields are required.</div>
+                <div>'Password' must match 'Match Password'</div>
+              </div>
             </div>
             <div id='div-registration-buttons'>
               <button type='submit' disabled={!this.state.username || !this.state.realname || !this.state.password || !this.state.matchpassword || (this.state.password !== this.state.matchpassword)}>Register</button>
