@@ -39,6 +39,7 @@ export default class RegistrationForm extends Component {
 
     AuthApiService.postUser({ user })
       .then(req => {
+        console.log(req)
         this.setState({
           username: '',
           realname: '',
