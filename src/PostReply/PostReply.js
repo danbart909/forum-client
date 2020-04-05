@@ -33,6 +33,7 @@ export default class PostReply extends Component {
     const threadId = this.props.match.params.threadid
     const decodedToken = TokenService.readJwtToken()
     const author = decodedToken.sub
+    // ForumService.editThread(id, date)
     ForumService.postReply(threadId, author, content)
       .then(reply => {
         this.props.addReply(reply)

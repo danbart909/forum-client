@@ -92,7 +92,7 @@ textarea {
 
 
 .div-thread-card {
-  outline: 1px solid grey;
+  outline: none;
   display: flex;
   flex-wrap: nowrap;
   width: 70vw;
@@ -100,12 +100,12 @@ textarea {
 }
 
 .div-forum-thread-id-name {
-  outline: none;
+  outline: 1px solid grey;
   width: 65%;
 }
 
 .div-forum-thread-author {
-  outline: none;
+  outline: 1px solid grey;
   width: 35%;
 }
 
@@ -192,8 +192,10 @@ textarea {
 #div-reply-card-author {
   outline: 1px solid grey;
   text-align: center;
-  align-self: center;
   width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #div-reply-card-second-half {
@@ -204,7 +206,10 @@ textarea {
 #div-reply-card-content {
   outline: 1px solid grey;
   width: 100%;
-  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 #div-reply-edit-delete-buttons {

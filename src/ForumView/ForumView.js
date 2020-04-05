@@ -7,11 +7,13 @@ export default class ForumView extends Component {
 
   renderThreads = () => {
     const threads = this.props.forumState.threads
+    const replies = this.props.forumState.replies
     if (threads) {
       return threads.map(threads =>
         <ThreadCard
           key={threads.id}
           threads={threads}
+          replies={replies}
         />
       )
     } else {

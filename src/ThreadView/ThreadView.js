@@ -53,7 +53,7 @@ export default class ThreadView extends Component {
       return (
         <section className='s-thread'>
           <div id='div-thread'>
-            <div id='div-thread-id-author-name'>#{thread.id} - {thread.author} - {thread.name}</div>
+            <div id='div-thread-id-author-name'>{thread.author} - {thread.name}</div>
             <div id='div-thread-op'>{thread.op}</div>
           </div>
           {this.renderOPButtons(thread)}
