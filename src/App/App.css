@@ -129,16 +129,18 @@ textarea {
 
 
 .s-thread {
+  outline: 2px gold solid;
   margin: 0 0 15px 0;
   width: 80vw;
   display: flex;
 }
 
 #div-thread {
-  outline: 2px gold solid;
+  /* outline: 2px gold solid; */
   width: 100%;
   display: flex;
   min-height: 125px;
+  margin: 0 0 0 0;
 }
 
 #div-thread-left-half {
@@ -146,6 +148,7 @@ textarea {
   display: flex;
   width: 20%;
   justify-content: center;
+  align-items: flex-end;
 }
 
 #div-thread-author {
@@ -153,8 +156,8 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
   width: 100%;
+  height: 70%;
 }
 
 #div-thread-right-half {
@@ -168,7 +171,7 @@ textarea {
 #div-thread-name {
   outline: 1px solid grey;
   width: 100%;
-  min-height: 40px;
+  min-height: 30%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -189,6 +192,7 @@ textarea {
   width: 12%;
   font-size: 8px;
   max-width: 40px;
+  margin: 0 4px 0 4px;
 }
 
 #button-edit-thread {
@@ -258,6 +262,7 @@ textarea {
   width: 15%;
   font-size: 8px;
   max-width: 40px;
+  margin: 0 4px 0 4px;
 }
 
 .button-edit-button {
