@@ -10,6 +10,10 @@ a:hover {
   color: rgb(6, 105, 144);
 }
 
+p {
+  padding: 5px;
+}
+
 nav {
   position: fixed;
   top: 0;
@@ -78,6 +82,7 @@ textarea {
 
 #div-landing-info {
   outline: none;
+  width: 80vw;
 }
 
 #div-landing-details {
