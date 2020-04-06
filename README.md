@@ -1,4 +1,4 @@
-# Title: Thinkful Forum (Client)
+# Thinkful Forum (Client)
 
 ## Description
 
