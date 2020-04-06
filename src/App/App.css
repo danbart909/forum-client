@@ -70,6 +70,45 @@ textarea {
 }
 
 
+/* ------------- LandingPage */
+
+#s-landing {
+  outline: none;
+}
+
+#div-landing-info {
+  outline: none;
+}
+
+#div-landing-details {
+  outline: none;
+}
+
+#forum {
+  color: lightskyblue;
+}
+
+#forum {
+  color: lightskyblue;
+}
+
+#batman {
+  color: goldenrod;
+}
+
+#superman {
+  color: turquoise;
+}
+
+#lexluthor {
+  color: lightgreen;
+}
+
+#password {
+  color: red;
+}
+
+
 /* ------------- ForumView */
 
 
