@@ -34,7 +34,8 @@ button:hover {
 }
 
 body {
-  font-family: 'Open Sans', regular;
+  /* font-family: 'Open Sans', regular; */
+  font-family: 'Baloo Thambi 2', open-sans;
   font-size: 14px;
   background-color: #17212f;
   color: whitesmoke;
@@ -226,11 +227,12 @@ textarea {
 
 #div-thread-op {
   outline: 1px rgb(98, 82, 82) solid;
-  display: flex;
   padding: 4px 6px;
   background-color: #0d2e16;
   max-width: 80%;
   width: 100%;
+  overflow: auto;
+  text-align: left;
 }
 
 #div-edit-op-buttons {
@@ -305,6 +307,8 @@ textarea {
   height: 100%;
   padding: 4px 8px;
   background-color: #0d2e16;
+  overflow: auto;
+  text-align: left;
 }
 
 #div-reply-edit-delete-buttons {
