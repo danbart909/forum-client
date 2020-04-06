@@ -53,11 +53,11 @@ export default class ThreadView extends Component {
       return (
         <section className='s-thread'>
           <div id='div-thread'>
-            <div id='div-thread-left-half'>
-              <div id='div-thread-author'>{thread.author}</div>
-            </div>
-            <div id='div-thread-right-half'>
+            <div id='div-thread-top-half'>
               <div id='div-thread-name'>{thread.name}</div>
+            </div>
+            <div id='div-thread-bottom-half'>
+              <div id='div-thread-author'>{thread.author}</div>
               <div id='div-thread-op'>{thread.op}</div>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ForumService from '../services/forum-service'
 import TokenService from '../services/token-service'
+import TimetrackerService from '../services/timetracker-service'
 export default class PostThread extends Component {
   constructor(props) {
     super(props)

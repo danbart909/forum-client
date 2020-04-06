@@ -3,7 +3,7 @@ import TokenService from './token-service'
 
 const TimetrackerService = {
   getTime() {
-    return fetch(`${config.API_ENDPOINT}/threads`, {
+    return fetch(`${config.API_ENDPOINT}/time`, {
       headers: {
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
@@ -14,13 +14,13 @@ const TimetrackerService = {
         : res.json()
     )
   },
-  postTime(author, name, op) {
-    return fetch(`${config.API_ENDPOINT}/threads`, {
+  postTime(id, stuff) {
+    return fetch(`${config.API_ENDPOINT}/time`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
       },
-      body: JSON.stringify({ author, name, op }),
+      body: JSON.stringify({ id, stuff }),
     })
       .then(res =>
         (!res.ok)
@@ -32,7 +32,7 @@ const TimetrackerService = {
       })
   },
   deleteTime(id) {
-    return fetch(`${config.API_ENDPOINT}/threads/${id}`, {
+    return fetch(`${config.API_ENDPOINT}/time/${id}`, {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json',
@@ -42,13 +42,13 @@ const TimetrackerService = {
         console.error(error)
       })
   },
-  editTime(id, author, name, op) {
-    return fetch(`${config.API_ENDPOINT}/threads/${id}`, {
+  editTime(id, stuff) {
+    return fetch(`${config.API_ENDPOINT}/time/${id}`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',
       },
-      body: JSON.stringify({ author, name, op }),
+      body: JSON.stringify({ stuff }),
     })
       .then(res =>
         (!res.ok)

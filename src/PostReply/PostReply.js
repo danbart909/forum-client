@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ForumService from '../services/forum-service'
 import TokenService from '../services/token-service'
+import TimetrackerService from '../services/timetracker-service'
 
 export default class PostReply extends Component {
   constructor(props) {
@@ -33,7 +34,6 @@ export default class PostReply extends Component {
     const threadId = this.props.match.params.threadid
     const decodedToken = TokenService.readJwtToken()
     const author = decodedToken.sub
-    // ForumService.editThread(id, date)
     ForumService.postReply(threadId, author, content)
       .then(reply => {
         this.props.addReply(reply)
