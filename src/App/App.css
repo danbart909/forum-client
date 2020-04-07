@@ -133,6 +133,45 @@ textarea {
 }
 
 
+/* ------------- Guide Bar */
+
+
+#div-thread-header {
+  outline: none;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 70vw;
+  margin: 10px 0 15px 0;
+  min-height: 35px;
+  align-items: stretch;
+}
+
+#div-forum-thread-author-header {
+  outline: 1px rgb(98, 82, 82) solid;
+  width: 25%;
+  padding: 7px 0 3px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #47231e;
+}
+
+#div-forum-thread-id-name-header {
+  outline: 1px rgb(98, 82, 82) solid;
+  width: 55%;
+  padding: 7px 0 6px 0;
+  background-color: #2d2f17;
+}
+
+#div-forum-thread-reply-count-header {
+  outline: 1px rgb(98, 82, 82) solid;
+  width: 20%;
+  font-size: 12px;
+  padding: 9px 0 6px 0;
+  background-color: #072f21;
+}
+
+
 /* ------------- ThreadCard */
 
 
@@ -146,21 +185,28 @@ textarea {
   align-items: stretch;
 }
 
-.div-forum-thread-id-name {
-  outline: 1px rgb(98, 82, 82) solid;
-  width: 65%;
-  padding: 6px 0 6px 0;
-  background-color: #2d2f17;
-}
-
 .div-forum-thread-author {
   outline: 1px rgb(98, 82, 82) solid;
-  width: 35%;
+  width: 25%;
   padding: 6px 0 3px 0;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #47231e;
+}
+
+.div-forum-thread-id-name {
+  outline: 1px rgb(98, 82, 82) solid;
+  width: 65%;
+  padding: 6px 4px 6px 4px;
+  background-color: #2d2f17;
+}
+
+.div-forum-thread-reply-count {
+  outline: 1px rgb(98, 82, 82) solid;
+  width: 10%;
+  padding: 6px 0 6px 0;
+  background-color: #072f21;
 }
 
 

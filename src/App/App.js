@@ -30,7 +30,14 @@ export default class App extends Component {
   }
 
   addReply = reply => {
+    const threadsArray = [...this.state.threads]
+    const thread = threadsArray.find(t =>
+      t.id == reply.threadid  
+    )
+    thread.date_modified = new Date()
+    threadsArray.sort((a,b) => a.date_modified > b.date_modified ? -1 : a.date_modified < b.date_modified ? 1 : 0)
     this.setState({
+      threads: threadsArray,
       replies: [...this.state.replies, reply]
     })
   }
