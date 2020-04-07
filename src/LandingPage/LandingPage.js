@@ -5,7 +5,7 @@ export default class LandingPage extends Component {
     return (
       <>
         <header role="banner">
-            <h1>Thinkful Forum Landing Page</h1>
+            <h1>Thinkful Forum Homepage</h1>
         </header>
         <section id='s-landing'>
           <div id='div-landing-info'>
