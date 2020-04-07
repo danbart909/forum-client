@@ -24,8 +24,10 @@ export default class App extends Component {
   }
 
   addThread = thread => {
+    const threads = [thread, ...this.state.threads]
+    thread.date_modified = new Date()
     this.setState({
-      threads: [...this.state.threads, thread]
+      threads: threads
     })
   }
 
@@ -35,7 +37,10 @@ export default class App extends Component {
       t.id == reply.threadid  
     )
     thread.date_modified = new Date()
-    threadsArray.sort((a,b) => a.date_modified > b.date_modified ? -1 : a.date_modified < b.date_modified ? 1 : 0)
+    console.log(threadsArray)
+    threadsArray.sort((a,b) => a.date_modified > b.date_modified)
+    // threadsArray.sort((a,b) => a.date_modified > b.date_modified ? -1 : a.date_modified < b.date_modified ? 1 : 0)
+    console.log(threadsArray)
     this.setState({
       threads: threadsArray,
       replies: [...this.state.replies, reply]
@@ -90,7 +95,9 @@ export default class App extends Component {
   }
 
   setInitialState = (threads, replies) => {
-    this.setState({ threads, replies })
+    const threadsArray = [...threads]
+    threadsArray.sort((a,b) => a.date_modified > b.date_modified ? -1 : a.date_modified < b.date_modified ? 1 : 0)
+    this.setState({ threads: threadsArray, replies })
   }
 
   componentDidMount() {

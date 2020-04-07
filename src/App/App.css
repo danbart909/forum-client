@@ -146,7 +146,8 @@ textarea {
 
 #div-forum-thread-author-header {
   outline: 1px rgb(98, 82, 82) solid;
-  width: 25%;
+  min-width: 60px;
+  width: 20%;
   padding: 7px 0 3px 0;
   display: flex;
   align-items: center;
@@ -156,7 +157,7 @@ textarea {
 
 #div-forum-thread-id-name-header {
   outline: 1px rgb(98, 82, 82) solid;
-  width: 55%;
+  width: 60%;
   padding: 7px 0 6px 0;
   background-color: #2d2f17;
 }
@@ -185,7 +186,8 @@ textarea {
 
 .div-forum-thread-author {
   outline: 1px rgb(98, 82, 82) solid;
-  width: 25%;
+  min-width: 60px;
+  width: 20%;
   padding: 6px 0 3px 0;
   display: flex;
   align-items: center;
@@ -195,7 +197,7 @@ textarea {
 
 .div-forum-thread-id-name {
   outline: 1px rgb(98, 82, 82) solid;
-  width: 65%;
+  width: 70%;
   padding: 6px 4px 6px 4px;
   display: flex;
   align-items: center;
