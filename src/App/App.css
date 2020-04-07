@@ -34,14 +34,12 @@ button:hover {
 }
 
 body {
-  /* font-family: 'Open Sans', regular; */
   font-family: 'Baloo Thambi 2', open-sans;
   font-size: 14px;
   background-color: #17212f;
   color: whitesmoke;
   text-align: center;
   margin: 30px 0 0 0;
-/*  min-width: 350px;*/
 }
 
 main {
@@ -199,6 +197,9 @@ textarea {
   outline: 1px rgb(98, 82, 82) solid;
   width: 65%;
   padding: 6px 4px 6px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #2d2f17;
 }
 
