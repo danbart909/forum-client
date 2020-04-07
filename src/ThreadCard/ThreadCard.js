@@ -12,8 +12,8 @@ export default class ThreadCard extends Component {
         <div className='div-forum-thread-author'>
           {this.props.threads.author}
         </div>
-        <div className='div-forum-thread-id-name'>
-          #{this.props.threads.id}-<Link to={`/forum/${this.props.threads.id}`}>{this.props.threads.name}</Link>
+        <div className='div-forum-thread-name'>
+          <Link to={`/forum/${this.props.threads.id}`}>{this.props.threads.name}</Link>
         </div>
         <div className='div-forum-thread-reply-count'>
           {newRepliesArray.length}

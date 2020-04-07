@@ -142,6 +142,8 @@ textarea {
   margin: 10px 0 15px 0;
   min-height: 35px;
   align-items: stretch;
+  font-size: 12px;
+
 }
 
 #div-forum-thread-author-header {
@@ -155,7 +157,7 @@ textarea {
   background-color: #47231e;
 }
 
-#div-forum-thread-id-name-header {
+#div-forum-thread-id-header {
   outline: 1px rgb(98, 82, 82) solid;
   width: 60%;
   padding: 7px 0 6px 0;
@@ -195,7 +197,7 @@ textarea {
   background-color: #47231e;
 }
 
-.div-forum-thread-id-name {
+.div-forum-thread-name {
   outline: 1px rgb(98, 82, 82) solid;
   width: 70%;
   padding: 6px 4px 6px 4px;
