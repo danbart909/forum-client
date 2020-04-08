@@ -16,6 +16,7 @@ export default class LandingPage extends Component {
             <p>The usernames <span id='batman'>Batman</span>, <span id='superman'>Superman</span>, and <span id='lexluthor'>Lex Luthor</span> are all open to guests. The password to these users is simply '<span id='password'>password</span>'.</p>
             <p>The current design was made with mobile in mind and as a result it is, for now, better viewed with a smaller screen.</p>
             <p>You may register with your own username and password and post at your leisure. Note that after registering, instead of being automatically logged in, you will be taken to the login page where you can then login with your newly created username and password.</p>
+            <p>The color scheme was hand-picked by a world-renowned color expert from Belgium. These dull, homely shades of colors may be completely unrelated to each other on the color wheel, but they will still invoke a feeling of warmth and belonging, and sometimes even nausea!</p>
           </div>
           <div id='div-landing-details'>
             <p><a href='https://github.com/danbart909/forum-client'>Client Repository at Github</a></p>
