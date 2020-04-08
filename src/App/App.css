@@ -82,6 +82,7 @@ textarea {
 
 #s-landing {
   outline: none;
+  border: none;
 }
 
 #div-landing-info {
@@ -140,7 +141,7 @@ textarea {
 
 
 #div-thread-header {
-  outline: none;
+  border: none;
   display: flex;
   flex-wrap: nowrap;
   width: 70vw;
@@ -150,7 +151,9 @@ textarea {
 }
 
 #div-forum-thread-author-header {
-  outline: 1px rgb(98, 82, 82) solid;
+  outline: none;
+  border: 1px rgb(98, 82, 82) solid;
+  border-radius: 25px 0 0 25px;
   min-width: 60px;
   width: 20%;
   padding: 7px 0 3px 0;
@@ -161,7 +164,8 @@ textarea {
 }
 
 #div-forum-thread-name-header {
-  outline: 1px rgb(98, 82, 82) solid;
+  outline: none;
+  border: 1px rgb(98, 82, 82) solid;
   width: 60%;
   padding: 7px 0 3px 0;
   display: flex;
@@ -171,7 +175,9 @@ textarea {
 }
 
 #div-forum-thread-reply-count-header {
-  outline: 1px rgb(98, 82, 82) solid;
+  outline: none;
+  border: 1px rgb(98, 82, 82) solid;
+  border-radius: 0 25px 25px 0;
   width: 20%;
   display: flex;
   align-items: center;
@@ -195,7 +201,8 @@ textarea {
 }
 
 .div-forum-thread-author {
-  outline: 1px rgb(98, 82, 82) solid;
+  border: 1px rgb(98, 82, 82) solid;
+  border-radius: 25px 0 0 25px;
   min-width: 60px;
   width: 20%;
   padding: 6px 0 3px 0;
@@ -206,7 +213,7 @@ textarea {
 }
 
 .div-forum-thread-name {
-  outline: 1px rgb(98, 82, 82) solid;
+  border: 1px rgb(98, 82, 82) solid;
   width: 70%;
   padding: 6px 4px 6px 4px;
   display: flex;
@@ -216,8 +223,9 @@ textarea {
 }
 
 .div-forum-thread-reply-count {
-  outline: 1px rgb(98, 82, 82) solid;
+  border: 1px rgb(98, 82, 82) solid;
   width: 10%;
+  border-radius: 0 25px 25px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -240,7 +248,7 @@ textarea {
 
 
 .s-thread {
-  outline: 1px rgb(98, 82, 82) solid;
+  border: none;
   margin: 0 0 15px 0;
   width: 80vw;
   display: flex;
@@ -251,6 +259,8 @@ textarea {
   width: 100%;
   display: flex;
   min-height: 125px;
+  border: none;
+  border-radius: 25px 25px 0 0;
   margin: 0 0 0 0;
   flex-direction: column;
 }
@@ -264,7 +274,8 @@ textarea {
 }
 
 #div-thread-name {
-  outline: 1px rgb(98, 82, 82) solid;
+  border: 1px rgb(98, 82, 82) solid;
+  border-radius: 25px 25px 0 0;
   width: 100%;
   display: flex;
   align-items: center;
@@ -273,7 +284,7 @@ textarea {
 }
 
 #div-thread-bottom-half {
-  outline: 1px rgb(98, 82, 82) solid;
+  border: none;
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -282,7 +293,8 @@ textarea {
 }
 
 #div-thread-author {
-  outline: 1px rgb(98, 82, 82) solid;
+  border: 1px rgb(98, 82, 82) solid;
+  border-radius: 0 0 0 25px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -291,7 +303,8 @@ textarea {
 }
 
 #div-thread-op {
-  outline: 1px rgb(98, 82, 82) solid;
+  border: 1px rgb(98, 82, 82) solid;
+  border-radius: 0 0 25px 0;
   padding: 4px 6px;
   background-color: #0d2e16;
   max-width: 80%;
@@ -334,7 +347,6 @@ textarea {
 
 .s-replies {
   width: 80vw;
-  outline: 1px grey solid;
 }
 
 .div-reply-card {
@@ -350,7 +362,8 @@ textarea {
 
 
 #div-reply-card-author {
-  outline: 1px rgb(98, 82, 82) solid;
+  border: 1px rgb(98, 82, 82) solid;
+  border-radius: 25px 0 0 25px;
   text-align: center;
   width: 20%;
   display: flex;
@@ -366,7 +379,8 @@ textarea {
 }
 
 #div-reply-card-content {
-  outline: 1px rgb(98, 82, 82) solid;
+  border: 1px rgb(98, 82, 82) solid;
+  border-radius: 0 25px 25px 0;
   width: 100%;
   display: flex;
   height: 100%;
