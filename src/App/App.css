@@ -27,6 +27,7 @@ button {
   outline: none;
   background-color: lightskyblue;
   color: black;
+  border-radius: 25px;
 }
 
 button:hover {
@@ -314,7 +315,7 @@ textarea {
 }
 
 #div-edit-op-buttons {
-  outline: 1px rgb(98, 82, 82) solid;
+  outline: none;
   display: flex;
   flex-direction: column;
   align-self: center;
@@ -391,7 +392,7 @@ textarea {
 }
 
 #div-reply-edit-delete-buttons {
-  outline: 1px rgb(98, 82, 82) solid;
+  outline: none;
   align-self: center;
   width: 15%;
   font-size: 8px;
