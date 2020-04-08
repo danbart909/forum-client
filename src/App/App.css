@@ -160,18 +160,23 @@ textarea {
   background-color: #47231e;
 }
 
-#div-forum-thread-id-header {
+#div-forum-thread-name-header {
   outline: 1px rgb(98, 82, 82) solid;
   width: 60%;
-  padding: 7px 0 6px 0;
+  padding: 7px 0 3px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #2d2f17;
 }
 
 #div-forum-thread-reply-count-header {
   outline: 1px rgb(98, 82, 82) solid;
   width: 20%;
-  font-size: 12px;
-  padding: 9px 0 6px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 0 3px 0;
   background-color: #072f21;
 }
 
@@ -446,6 +451,7 @@ textarea {
 
 #s-registration-form {
   outline: none;
+  width: 7.5vw;
 }
 
 #form-registration-form {
@@ -481,7 +487,7 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 0 10px 0;
+  margin: 0 0 15px 0;
 }
 
 #div-registration-errors {
@@ -489,22 +495,26 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 0 10px 0;
+  margin: 10px 0 0 0;
 }
 
 #div-registration-errors-alert {
-  outline: 1px solid gray;
+  outline: none;
 }
 
-#div-registration-errors-instructions {
-  outline: 1px solid gray;
+#div-registration-errors-instructions-1 {
+  outline: none;
+  font-size: 10px;
+}
+
+#div-registration-errors-instructions-2 {
+  outline: none;
   font-size: 10px;
 }
 
 #div-registration-buttons {
-  outline: none;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 
@@ -650,4 +660,16 @@ textarea {
   display: flex;
   justify-content: space-evenly;
   margin: 10px 0 0 0;
+}
+
+
+
+/* ------------- Media Queries */
+
+
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 11px;
+  }
 }
