@@ -107,9 +107,6 @@ export default class App extends Component {
     IdleService.setIdleCallback(this.logoutFromIdle)
     if (TokenService.hasAuthToken()) {
       IdleService.regiserIdleTimerResets()
-      // TokenService.queueCallbackBeforeExpiry(() => {
-      //   AuthApiService.postRefreshToken()
-      // })
     }
   }
 

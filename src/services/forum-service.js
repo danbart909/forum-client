@@ -128,5 +128,3 @@ const ForumService = {
 }
 
 export default ForumService
-
-// 24/44 'authorization': `bearer ${TokenService.getAuthToken()}`,
