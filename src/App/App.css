@@ -33,6 +33,11 @@ button:hover {
   background-color: rgb(3, 123, 170);
 }
 
+button:disabled {
+  background-color: lightgray;
+  color: gray;
+}
+
 body {
   font-family: 'Baloo Thambi 2', open-sans;
   font-size: 14px;
@@ -142,8 +147,6 @@ textarea {
   margin: 10px 0 15px 0;
   min-height: 35px;
   align-items: stretch;
-  font-size: 12px;
-
 }
 
 #div-forum-thread-author-header {
@@ -426,6 +429,11 @@ textarea {
   margin: 0 0 10px 0;
 }
 
+#div-login-error {
+  outline: none;
+  margin: 0 0 10px 0;
+}
+
 #div-login-buttons {
   outline: none;
   display: flex;
@@ -488,7 +496,7 @@ textarea {
   outline: 1px solid gray;
 }
 
-#div-registration-erros-instructions {
+#div-registration-errors-instructions {
   outline: 1px solid gray;
   font-size: 10px;
 }

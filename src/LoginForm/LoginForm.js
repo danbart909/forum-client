@@ -40,6 +40,14 @@ export default class LoginForm extends Component {
       })
   }
 
+  displayError = () => {
+    if (this.state.error) {
+      return (
+        this.state.error
+      )
+    }
+  }
+
   render() {
     return (
       <>
@@ -50,12 +58,15 @@ export default class LoginForm extends Component {
           <div id='div-login-form-container'>
             <form id='form-login-form' onSubmit={(e) => {this.handleSubmit(e)}}>
               <div id='div-login-username'>
-                <label htmlFor="login-username">Username:</label>
-                <input type="text" value={this.state.username} onChange={this.handleChangeUsername} name="login-username" required/>
+                <label htmlFor="input-login-username">Username:</label>
+                <input type="text" value={this.state.username} onChange={this.handleChangeUsername} id="input-login-username" required/>
               </div>
               <div id='div-login-password'>
-                <label htmlFor="login-password">Password:</label>
-                <input type="text" value={this.state.password} onChange={this.handleChangePassword} name="login-password" required/>
+                <label htmlFor="input-login-password">Password:</label>
+                <input type="password" value={this.state.password} onChange={this.handleChangePassword} id="input-login-password" required/>
+              </div>
+              <div id='div-login-error'>
+                {this.displayError()}
               </div>
               <div id='div-login-buttons'>
                 <button type='submit' disabled={!this.state.username || !this.state.password}>Login</button>

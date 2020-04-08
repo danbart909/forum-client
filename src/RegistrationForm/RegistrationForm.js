@@ -35,11 +35,11 @@ export default class RegistrationForm extends Component {
   handleSubmit = e => {
     e.preventDefault()
     const { username, realname, password } = this.state
+    // const date_joined = new Date()
     const user = { username, realname, password }
 
-    AuthApiService.postUser({ user })
+    AuthApiService.postUser( user )
       .then(req => {
-        console.log(req)
         this.setState({
           username: '',
           realname: '',
@@ -49,6 +49,7 @@ export default class RegistrationForm extends Component {
       })
       .catch(res => {
         this.setState({ error: res.error })
+        console.log(res.error)
       })
 
     this.props.history.push('/login')
@@ -80,17 +81,17 @@ export default class RegistrationForm extends Component {
             </div>
             <div id='div-registration-password'>
               <label htmlFor="register-password">Password:</label>
-              <input type="text" value={this.state.password} onChange={this.handleChangePassword} name="register-password" required/>
+              <input type="password" value={this.state.password} onChange={this.handleChangePassword} name="register-password" required/>
             </div>
             <div id='div-registration-match-password'>
               <label htmlFor="register-match-password">Match Password:</label>
-              <input type="text" value={this.state.matchpassword} onChange={this.handleChangeMatchpassword} name="register-match-password" required/>
+              <input type="password" value={this.state.matchpassword} onChange={this.handleChangeMatchpassword} name="register-match-password" required/>
             </div>
             <div id='div-registration-errors'>
               <div id='div-registration-errors-alert'>{this.showErrors()}</div>
-              <div id='div-registration-erros-instructions'>
+              <div id='div-registration-errors-instructions'>
                 <div>All fields are required.</div>
-                <div>'Password' must match 'Match Password'</div>
+                <div>'Password' must equal 'Match Password'</div>
               </div>
             </div>
             <div id='div-registration-buttons'>

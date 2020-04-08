@@ -13,8 +13,8 @@ const AuthApiService = {
     })
       .then(res =>
         (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
+          ? res.json().then(e => Promise.reject(e), console.log('yes?'))
+          : res.json(), console.log('no?')
       )
   },
   postLogin({ username, password }) {
