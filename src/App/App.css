@@ -451,7 +451,6 @@ textarea {
 
 #s-registration-form {
   outline: none;
-  width: 7.5vw;
 }
 
 #form-registration-form {
@@ -505,14 +504,18 @@ textarea {
 #div-registration-errors-instructions-1 {
   outline: none;
   font-size: 10px;
+  display: flex;
 }
 
 #div-registration-errors-instructions-2 {
   outline: none;
   font-size: 10px;
+  display: flex;
+  width: 100px;
 }
 
 #div-registration-buttons {
+  outline: none;
   display: flex;
   justify-content: space-between;
 }

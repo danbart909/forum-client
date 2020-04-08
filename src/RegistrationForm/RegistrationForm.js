@@ -63,6 +63,30 @@ export default class RegistrationForm extends Component {
     }
   }
 
+  error1 = () => {
+    if (!this.state.username || !this.state.realname || !this.state.password || !this.state.matchpassword) {
+      return (
+        <div>All fields are required.</div>
+      )
+    } else {
+      return (
+        <></>
+      )
+    }
+  }
+
+  error2 = () => {
+    if ((this.state.password != this.state.matchpassword) || !this.state.password || !this.state.matchpassword) {
+      return (
+        <div>'Password' must equal 'Match Password'</div>
+      )
+    } else {
+      return (
+        <></>
+      )
+    }
+  }
+
   render() {
     return (
       <>
@@ -87,16 +111,18 @@ export default class RegistrationForm extends Component {
               <label htmlFor="register-match-password">Match Password:</label>
               <input type="password" value={this.state.matchpassword} onChange={this.handleChangeMatchpassword} name="register-match-password" required/>
             </div>
+            <div id='div-registration-buttons'>
+              <button id='reg-reg' type='submit' disabled={!this.state.username || !this.state.realname || !this.state.password || !this.state.matchpassword || (this.state.password !== this.state.matchpassword)}>Register</button>
+              <button id='reg-goback' onClick={() => {this.handleGoBack()}}>Go Back</button>
+            </div>
             <div id='div-registration-errors'>
               <div id='div-registration-errors-alert'>{this.showErrors()}</div>
-              <div id='div-registration-errors-instructions'>
-                <div>All fields are required.</div>
-                <div>'Password' must equal 'Match Password'</div>
+              <div id='div-registration-errors-instructions-1'>
+                {this.error1()}
               </div>
-            </div>
-            <div id='div-registration-buttons'>
-              <button type='submit' disabled={!this.state.username || !this.state.realname || !this.state.password || !this.state.matchpassword || (this.state.password !== this.state.matchpassword)}>Register</button>
-              <button onClick={() => {this.handleGoBack()}}>Go Back</button>
+              <div id='div-registration-errors-instructions-2'>
+                {this.error2()}
+              </div>
             </div>
           </form>
         </section>

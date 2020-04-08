@@ -27,7 +27,7 @@ export default class ForumView extends Component {
         <div id='div-forum-thread-author-header'>
           Author
         </div>
-        <div id='div-forum-thread-id-header'>
+        <div id='div-forum-thread-name-header'>
           Thread Title
         </div>
         <div id='div-forum-thread-reply-count-header'>
