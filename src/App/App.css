@@ -222,6 +222,7 @@ textarea {
   align-items: center;
   justify-content: center;
   background-color: #2d2f17;
+  overflow-x: auto;
 }
 
 .div-forum-thread-reply-count {
@@ -284,6 +285,7 @@ textarea {
   align-items: center;
   justify-content: center;
   background-color: #381c16;
+  overflow-x: auto;
 }
 
 #div-thread-bottom-half {
@@ -313,7 +315,7 @@ textarea {
   background-color: #0d2e16;
   max-width: 80%;
   width: 100%;
-  overflow: auto;
+  overflow-x: auto;
   text-align: left;
 }
 
