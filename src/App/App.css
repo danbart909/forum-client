@@ -211,6 +211,7 @@ textarea {
   align-items: center;
   justify-content: center;
   background-color: #47231e;
+  overflow-x: auto;
 }
 
 .div-forum-thread-name {
