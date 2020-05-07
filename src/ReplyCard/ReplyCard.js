@@ -22,8 +22,8 @@ export default class ReplyCard extends Component {
       if (username == this.props.author) {
         return (
           <div id='div-reply-edit-delete-buttons'>
-            <Link to={`/forum/${this.props.threadId}/${this.props.id}/edit`}><button className='button-edit-button'>edit</button></Link>
-            <button className='button-delete-button' onClick={() => {this.handleDelete()}}>del</button>
+            <Link to={`/forum/${this.props.threadId}/${this.props.id}/edit`} style={{ textDecoration: 'none' }}><a className='button-edit-button'>edit</a></Link>
+            <a className='button-delete-button' onClick={() => {this.handleDelete()}}>del</a>
           </div>
         )
       } else {
@@ -41,10 +41,12 @@ export default class ReplyCard extends Component {
   render() {
     return (
       <>
-        <div id='div-reply-card-author'>{this.props.author}</div>
+        <div id='div-reply-card-first-half'>
+          <div id='div-reply-card-author'>{this.props.author}</div>
+          {this.renderButtons()}
+        </div>
         <div id='div-reply-card-second-half'>
           <div id='div-reply-card-content'>{this.props.content}</div>
-          {this.renderButtons()}
         </div>
       </>
     )

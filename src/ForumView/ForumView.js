@@ -24,14 +24,18 @@ export default class ForumView extends Component {
   renderGuideBar = () => {
     return (
       <div id='div-thread-header'>
-        <div id='div-forum-thread-author-header'>
-          Author
+        <div id='div-forum-guide-first-half'>
+          <div id='div-forum-thread-author-header'>
+            Author
+          </div>
         </div>
-        <div id='div-forum-thread-name-header'>
-          Thread Title
-        </div>
-        <div id='div-forum-thread-reply-count-header'>
-          Replies
+        <div id='div-forum-guide-second-half'>
+          <div id='div-forum-thread-name-header'>
+            Thread Title
+          </div>
+          <div id='div-forum-thread-reply-count-header'>
+            Replies
+          </div>
         </div>
       </div>
     )
@@ -57,7 +61,7 @@ export default class ForumView extends Component {
         </header>
         <section id='s-forum-view'>
           {this.renderNewThreadButton()}
-          {this.renderGuideBar()}
+          {/* {this.renderGuideBar()} */}
           {this.renderThreads()}
         </section>
       </>

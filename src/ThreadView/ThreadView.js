@@ -55,13 +55,15 @@ export default class ThreadView extends Component {
           <div id='div-thread'>
             <div id='div-thread-top-half'>
               <div id='div-thread-name'>{thread.name}</div>
+              <div id='div-thread-middle-half'>
+                <div id='div-thread-author'>{thread.author}</div>
+                {this.renderOPButtons(thread)}
+              </div>
             </div>
             <div id='div-thread-bottom-half'>
-              <div id='div-thread-author'>{thread.author}</div>
               <div id='div-thread-op'>{thread.op}</div>
             </div>
           </div>
-          {this.renderOPButtons(thread)}
         </section>
       )
     }
@@ -78,8 +80,8 @@ export default class ThreadView extends Component {
       if (thread.author == username) {
         return (
           <div id='div-edit-op-buttons'>
-            <Link to={`${threadId}/edit`}><button id='button-edit-thread'>edit</button></Link>
-            <button id='button-delete-thread' onClick={() => {this.deleteThread()}}>del</button>
+            <Link to={`${threadId}/edit`} style={{ textDecoration: 'none' }}><a className='button-edit-thread'>edit</a></Link>
+            <a className='button-delete-thread' onClick={() => {this.deleteThread()}}>del</a>
           </div>
         )
       } else {
