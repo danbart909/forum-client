@@ -246,7 +246,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #492a20;
+  background-color: #071b1f;
   overflow-x: auto;
 }
 
@@ -310,7 +310,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #382620;
+  background-color: #071b1f;
   overflow-x: auto;
   padding: 4px 5px 3px 5px;
 }
