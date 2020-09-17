@@ -28,15 +28,16 @@ nav {
 }
 
 button {
+  /* background-color: lightskyblue; */
+  /* color: black; */
+  border-radius: 5px;
+  border: none;
   outline: none;
-  background-color: lightskyblue;
-  color: black;
-  border-radius: 15px;
 }
 
-button:hover {
-  background-color: rgb(3, 123, 170);
-}
+/* button:hover {
+
+} */
 
 button:disabled {
   background-color: lightgray;
@@ -132,13 +133,33 @@ textarea {
 }
 
 #div-new-thread-button {
-  outline: none;
-  margin: 0 0 10px 0;
+  /* outline: 2px solid white; */
+  margin: 0 0 15px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #button-new-thread-button {
   outline: none;
-  margin: 0 0 5px 0;
+  padding: 5px 10vw;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  margin: 0 0 15px 0;
+  /* width: 100%; */
+  /* height: 100%; */
+  /* border: none; */
+  /* border-radius: 0px; */
+  background-color: rgb(3, 123, 170);
+  color: white;
+  transition: 0.5s;
+}
+
+#button-new-thread-button:hover {
+  background-color: rgb(75, 198, 246);
+  color: black;
+  transition: 0.5s;
 }
 
 
@@ -262,14 +283,6 @@ textarea {
 
 
 /* ------------- ThreadView */
-
-
-#div-post-reply-buttons {
-  outline: none;
-  margin: 5px 0 0 0;
-  display: flex;
-  justify-content: space-evenly;
-}
 
 
 /* renderOP */
@@ -398,12 +411,53 @@ textarea {
 
 .div-reply-card {
   outline: none;
-  margin: 0px 0 5px 0;
+  /* margin: 0px 0 5px 0; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 75px;
+}
+
+/* renderPostReplyButtons */
+
+#div-post-reply-buttons {
+  /* border: 2px solid white; */
+  display: flex;
+  justify-content: space-evenly;
+  padding: 40px 0 60px 0;
+}
+
+#button-post-reply-button {
+  background-color: green;
+  color: white;
+  border: none;
+  height: 120%;
+  width: 10vw;
+  transition: 0.5s;
+}
+
+#button-post-reply-button:hover {
+  background-color: rgb(97, 238, 97);
+  color: black;
+  border: none;
+  transition: 0.5s;
+}
+
+#button-go-back-button {
+  background-color: rgb(109, 0, 0);
+  color: white;
+  border: none;
+  height: 120%;
+  width: 10vw;
+  transition: 0.5s;
+}
+
+#button-go-back-button:hover {
+  background-color: red;
+  color: black;
+  border: none;
+  transition: 0.5s;
 }
 
 
@@ -637,6 +691,110 @@ textarea {
   margin: 10px 0 0 0;
 }
 
+#div-post-reply-button {
+  /* border: 2px solid white; */
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 0 0 0;
+  /* height: 120%; */
+  /* padding: 40px 0 60px 0; */
+}
+
+#button-post-thread-button  {
+  background-color: green;
+  color: white;
+  border: none;
+  /* height: 120%; */
+  width: 10vw;
+  transition: 0.5s;
+}
+
+#button-post-thread-button:hover {
+  background-color: rgb(97, 238, 97);
+  color: black;
+  border: none;
+  transition: 0.5s;
+}
+
+#button-post-reply-button  {
+  background-color: green;
+  color: white;
+  border: none;
+  /* height: 120%; */
+  width: 10vw;
+  transition: 0.5s;
+}
+
+#button-post-reply-button:hover {
+  background-color: rgb(97, 238, 97);
+  color: black;
+  border: none;
+  transition: 0.5s;
+}
+
+#button-post-reply  {
+  background-color: green;
+  color: white;
+  border: none;
+  width: 10vw;
+  transition: 0.5s;
+}
+
+#button-post-reply:hover {
+  background-color: rgb(97, 238, 97);
+  color: black;
+  border: none;
+  transition: 0.5s;
+}
+
+#button-post-thread-go-back-button {
+  background-color: rgb(109, 0, 0);
+  color: white;
+  border: none;
+  /* height: 120%; */
+  width: 10vw;
+  transition: 0.5s;
+}
+
+#button-post-thread-go-back-button:hover {
+  background-color: red;
+  color: black;
+  border: none;
+  transition: 0.5s;
+}
+
+#button-post-reply-go-back-button {
+  background-color: rgb(109, 0, 0);
+  color: white;
+  border: none;
+  /* height: 120%; */
+  width: 10vw;
+  transition: 0.5s;
+}
+
+#button-post-reply-go-back-button:hover {
+  background-color: red;
+  color: black;
+  border: none;
+  transition: 0.5s;
+}
+
+#button-go-back {
+  background-color: rgb(109, 0, 0);
+  color: white;
+  border: none;
+  /* height: 120%; */
+  width: 10vw;
+  transition: 0.5s;
+}
+
+#button-go-back:hover {
+  background-color: red;
+  color: black;
+  border: none;
+  transition: 0.5s;
+}
+
 
 /* ------------- Post Reply */
 
@@ -668,7 +826,7 @@ textarea {
   display: flex;
   width: 100%;
   justify-content: space-evenly;
-  margin: 10px 0 0 0;
+  /* margin: 10px 0 0 0; */
 }
 
 

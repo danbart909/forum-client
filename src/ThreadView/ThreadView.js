@@ -128,8 +128,8 @@ export default class ThreadView extends Component {
     if (TokenService.hasAuthToken()) {
       return (
         <div id='div-post-reply-buttons'>
-          <Link to={`${threadId}/reply`}><button>Post Reply</button></Link>
-          <Link to={`/forum`}><button>Go Back</button></Link>
+          <Link to={`${threadId}/reply`}><button id='button-post-reply-button'>Post Reply</button></Link>
+          <Link to={`/forum`}><button id='button-go-back-button'>Go Back</button></Link>
         </div>
       )
     } else {

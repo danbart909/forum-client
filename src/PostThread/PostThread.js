@@ -55,8 +55,8 @@ export default class PostThread extends Component {
                 <textarea rows="10" name="thread-body" onChange={this.handleChangeOp} required></textarea>
               </div>
               <div id='div-post-thread-buttons'>
-                <button type='submit' disabled={!this.state.name || !this.state.op}>Post Thread</button>
-                <button onClick={() => {this.handleGoBack()}}>Go Back</button>
+                <button id='button-post-thread-button' type='submit' disabled={!this.state.name || !this.state.op}>Post Thread</button>
+                <button id='button-post-thread-go-back-button' onClick={() => {this.handleGoBack()}}>Go Back</button>
               </div>
             </form>
           </div>
