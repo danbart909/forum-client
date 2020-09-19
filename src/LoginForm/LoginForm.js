@@ -69,8 +69,8 @@ export default class LoginForm extends Component {
                 {this.displayError()}
               </div>
               <div id='div-login-buttons'>
-                <button type='submit' disabled={!this.state.username || !this.state.password}>Login</button>
-                <button onClick={() => {this.handleGoBack()}}>Go Back</button>
+                <button id='button-login-login-button' type='submit' disabled={!this.state.username || !this.state.password}>Login</button>
+                <button id='button-login-go-back-button' onClick={() => {this.handleGoBack()}}>Go Back</button>
               </div>
             </form>
           </div>

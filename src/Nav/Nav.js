@@ -27,7 +27,7 @@ export default class Nav extends Component {
   renderLogout = () => {
     return (
       <div id='div-logout'>
-        <Link to='/'>Homepage</Link> - <Link to='/forum'>Forum</Link> - Hello, {this.renderUserName()}! - <button onClick={() => {this.logout()}}>Logout</button>
+        <Link to='/'>Homepage</Link> - <Link to='/forum'>Forum</Link> - Hello, {this.renderUserName()}! - <button id='logout-button' onClick={() => {this.logout()}}>Logout</button>
       </div>
     )
   }

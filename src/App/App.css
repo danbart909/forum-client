@@ -35,8 +35,36 @@ button {
   outline: none;
 }
 
-/* button:hover {
+/* #button-post-reply-button {
+  background-color: green;
+  color: white;
+  border: none;
+  height: 120%;
+  width: 10vw;
+  transition: 0.5s;
+}
 
+#button-post-reply-button:hover {
+  background-color: rgb(97, 238, 97);
+  color: black;
+  border: none;
+  transition: 0.5s;
+}
+
+#button-go-back-button {
+  background-color: rgb(109, 0, 0);
+  color: white;
+  border: none;
+  height: 120%;
+  width: 10vw;
+  transition: 0.5s;
+}
+
+#button-go-back-button:hover {
+  background-color: red;
+  color: black;
+  border: none;
+  transition: 0.5s;
 } */
 
 button:disabled {
@@ -124,6 +152,20 @@ textarea {
   color: red;
 }
 
+/* ------------- Nav */
+
+#logout-button {
+  outline: none;
+  background-color: rgb(3, 123, 170);
+  color: white;
+  padding: 3px 6px;
+}
+
+#logout-button:hover {
+  background-color: rgb(75, 198, 246);
+  color: black;
+  transition: 0.5s;
+}
 
 /* ------------- ForumView */
 
@@ -134,7 +176,8 @@ textarea {
 
 #div-new-thread-button {
   /* outline: 2px solid white; */
-  margin: 0 0 15px 0;
+  padding: 10px 0;
+  margin: 10px 0 0 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -142,7 +185,7 @@ textarea {
 
 #button-new-thread-button {
   outline: none;
-  padding: 5px 10vw;
+  padding: 7px 10vw;
   /* display: flex; */
   /* justify-content: center; */
   /* align-items: center; */
@@ -234,7 +277,7 @@ textarea {
   flex-direction: column;
   flex-wrap: nowrap;
   width: 70vw;
-  margin: 10px 0 15px 0;
+  margin: 30px 0 35px 0;
   min-height: 35px;
   align-items: stretch;
 }
@@ -555,7 +598,7 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 0 10px 0;
+  margin: 0 0 25px 0;
 }
 
 #div-login-password {
@@ -563,7 +606,7 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 0 10px 0;
+  margin: 0 0 35px 0;
 }
 
 #div-login-error {
@@ -572,9 +615,39 @@ textarea {
 }
 
 #div-login-buttons {
-  outline: none;
   display: flex;
   justify-content: space-evenly;
+  margin: 20px 0 0 0;
+}
+
+#button-login-login-button {
+  background-color: green;
+  color: white;
+  border: none;
+  width: 4vw;
+  transition: 0.5s;
+}
+
+#button-login-login-button:hover {
+  background-color: rgb(97, 238, 97);
+  color: black;
+  border: none;
+  transition: 0.5s;
+}
+
+#button-login-go-back-button {
+  background-color: rgb(109, 0, 0);
+  color: white;
+  border: none;
+  width: 4vw;
+  transition: 0.5s;
+}
+
+#button-login-go-back-button:hover {
+  background-color: red;
+  color: black;
+  border: none;
+  transition: 0.5s;
 }
 
 
@@ -594,7 +667,7 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 0 10px 0;
+  margin: 0 0 25px 0;
 }
 
 #div-registration-realname {
@@ -602,7 +675,7 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 0 10px 0;
+  margin: 0 0 25px 0;
 }
 
 #div-registration-password {
@@ -610,7 +683,7 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 0 10px 0;
+  margin: 0 0 25px 0;
 }
 
 #div-registration-match-password {
@@ -618,7 +691,7 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 0 15px 0;
+  margin: 0 0 35px 0;
 }
 
 #div-registration-errors {
@@ -626,7 +699,7 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px 0 0 0;
+  margin: 30px 0 0 0;
 }
 
 #div-registration-errors-alert {
@@ -649,7 +722,37 @@ textarea {
 #div-registration-buttons {
   outline: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+}
+
+#reg-reg {
+  background-color: green;
+  color: white;
+  border: none;
+  width: 4vw;
+  transition: 0.5s;
+}
+
+#reg-reg:hover {
+  background-color: rgb(97, 238, 97);
+  color: black;
+  border: none;
+  transition: 0.5s;
+}
+
+#reg-goback {
+  background-color: rgb(109, 0, 0);
+  color: white;
+  border: none;
+  width: 4vw;
+  transition: 0.5s;
+}
+
+#reg-goback:hover {
+  background-color: red;
+  color: black;
+  border: none;
+  transition: 0.5s;
 }
 
 
@@ -674,7 +777,7 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 0 5px 0;
+  margin: 0 0 35px 0;
 }
 
 #div-post-thread-body {
@@ -688,7 +791,7 @@ textarea {
   outline: none;
   display: flex;
   justify-content: space-evenly;
-  margin: 10px 0 0 0;
+  margin: 20px 0 0 0;
 }
 
 #div-post-reply-button {
@@ -704,7 +807,8 @@ textarea {
   background-color: green;
   color: white;
   border: none;
-  /* height: 120%; */
+  margin: 25px 0;
+  padding: 10px 0;
   width: 10vw;
   transition: 0.5s;
 }
@@ -720,7 +824,6 @@ textarea {
   background-color: green;
   color: white;
   border: none;
-  /* height: 120%; */
   width: 10vw;
   transition: 0.5s;
 }
@@ -752,6 +855,8 @@ textarea {
   color: white;
   border: none;
   /* height: 120%; */
+  margin: 25px 0;
+  padding: 10px 0;
   width: 10vw;
   transition: 0.5s;
 }
