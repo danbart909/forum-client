@@ -21,7 +21,7 @@ export default class ReplyCard extends Component {
       const username = decodedToken.sub
       if (username == this.props.author) {
         return (
-          <div id='div-reply-edit-delete-buttons'>
+          <div className='div-reply-edit-delete-buttons'>
             <Link to={`/forum/${this.props.threadId}/${this.props.id}/edit`} style={{ textDecoration: 'none' }}><a className='button-edit-button'>edit</a></Link>
             <a className='button-delete-button' onClick={() => {this.handleDelete()}}>del</a>
           </div>
@@ -41,12 +41,16 @@ export default class ReplyCard extends Component {
   render() {
     return (
       <>
-        <div id='div-reply-card-first-half'>
-          <div id='div-reply-card-author'>{this.props.author}</div>
-          {this.renderButtons()}
+        <div className='div-reply-card-left'>
+          <div className='div-reply-card-author'>
+            {this.props.author}
+          </div>
         </div>
-        <div id='div-reply-card-second-half'>
-          <div id='div-reply-card-content'>{this.props.content}</div>
+        <div className='div-reply-card-right'>
+          <div className='div-reply-card-content'>
+            {this.props.content}
+            {this.renderButtons()}
+          </div>
         </div>
       </>
     )

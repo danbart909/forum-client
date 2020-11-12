@@ -9,17 +9,22 @@ export default class ThreadCard extends Component {
     )
     return (
       <div className='div-thread-card'>
-        <div className='div-forum-thread-first-half'>
+        <div className='div-forum-thread-left'>
+          <div className='div-forum-thread-name'>
+            <Link className='div-forum-thread-name-link' to={`/forum/${this.props.threads.id}`}>
+              <span>{this.props.threads.name}</span>
+            </Link>
+          </div>
           <div className='div-forum-thread-author'>
-            {this.props.threads.author}
+            <span>Author: {this.props.threads.author}</span>
           </div>
         </div>
-        <div className='div-forum-thread-second-half'>
-          <div className='div-forum-thread-name'>
-            <Link to={`/forum/${this.props.threads.id}`}>{this.props.threads.name}</Link>
-          </div>
+        <div className='div-forum-thread-right'>
           <div className='div-forum-thread-reply-count'>
-            {newRepliesArray.length}
+            <span>{newRepliesArray.length}</span>
+          </div>
+          <div className='div-forum-thread-lastreply'>
+            <span>Last reply by: QQQQQQ</span>
           </div>
         </div>
       </div>

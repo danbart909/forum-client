@@ -53,15 +53,19 @@ export default class ThreadView extends Component {
       return (
         <section className='s-thread'>
           <div id='div-thread'>
-            <div id='div-thread-top-half'>
-              <div id='div-thread-name'>{thread.name}</div>
-              <div id='div-thread-middle-half'>
-                <div id='div-thread-author'>{thread.author}</div>
-                {this.renderOPButtons(thread)}
+            <div id='div-thread-top'>
+              <div id='div-thread-name'>
+                {thread.name}
               </div>
             </div>
-            <div id='div-thread-bottom-half'>
-              <div id='div-thread-op'>{thread.op}</div>
+              <div id='div-thread-bot'>
+                <div id='div-thread-author'>
+                  {thread.author}
+                </div>
+              <div id='div-thread-op'>
+                {thread.op}
+                {this.renderOPButtons(thread)}
+              </div>
             </div>
           </div>
         </section>
@@ -127,9 +131,9 @@ export default class ThreadView extends Component {
     const threadId = this.props.match.params.threadid
     if (TokenService.hasAuthToken()) {
       return (
-        <div id='div-post-reply-buttons'>
-          <Link to={`${threadId}/reply`}><button id='button-post-reply-button'>Post Reply</button></Link>
-          <Link to={`/forum`}><button id='button-go-back-button'>Go Back</button></Link>
+        <div className='div-post-reply-buttons'>
+          <Link to={`${threadId}/reply`}><button className='button-post-reply-button'>Post Reply</button></Link>
+          <Link to={`/forum`}><button className='button-go-back-button'>Go Back</button></Link>
         </div>
       )
     } else {
