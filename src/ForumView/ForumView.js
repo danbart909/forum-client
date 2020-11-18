@@ -62,6 +62,7 @@ export default class ForumView extends Component {
         <section id='s-forum-view'>
           {this.renderNewThreadButton()}
           {/* {this.renderGuideBar()} */}
+          {/* <div id=''></div> */}
           <div id='threads-container'>
             {this.renderThreads()}
           </div>
