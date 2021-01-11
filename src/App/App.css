@@ -268,7 +268,7 @@ textarea {
 .div-forum-thread-left {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 85%;
 }
 
 .div-forum-thread-name {
@@ -298,13 +298,13 @@ textarea {
 
 .div-forum-thread-right {
   display: flex;
-  width: 30%;
+  width: 15%;
   justify-content: center;
   border-left: 1px solid white;
 }
 
 .div-forum-thread-reply-count {
-  width: 40%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -312,7 +312,7 @@ textarea {
   text-align: center;
 }
 
-.div-forum-thread-lastreply {
+/* .div-forum-thread-lastreply {
   width: 60%;
   border-left: 1px solid white;
   display: flex;
@@ -320,7 +320,7 @@ textarea {
   justify-content: center;
   text-align: center;
   align-items: center;
-}
+} */
 
 
 /* ------------- ThreadView */

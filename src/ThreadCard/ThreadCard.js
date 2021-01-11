@@ -24,10 +24,10 @@ export default class ThreadCard extends Component {
             <span>Replies:</span>
             <span>{newRepliesArray.length}</span>
           </div>
-          <div className='div-forum-thread-lastreply'>
+          {/* <div className='div-forum-thread-lastreply'>
             <span>Last Reply By:</span>
             <span>QQQQQQ</span>
-          </div>
+          </div> */}
         </div>
       </div>
     )
